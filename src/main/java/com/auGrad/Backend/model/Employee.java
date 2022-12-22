@@ -1,6 +1,8 @@
 package com.auGrad.Backend.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -8,20 +10,22 @@ import java.util.Date;
 
 @Entity
 @Component
-@Data
+@Getter
+@Setter
 @Table(name="employee")
 public class Employee {
-
+    //PK
     @Id
     @Column(name="emp_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;
 
+    //FK
     @Column(name="batch_id")
     private int batchId;
 
-    @Column(name="emp_name")
-    private String empName;
+    @Column(name="employee_name")
+    private String employeeName;
 
     @Column(name="designation")
     private String designation;
@@ -40,10 +44,10 @@ public class Employee {
 
     @Column(name="delivery_director")
     private String deliveryDirector;
-
+    //FK
     @Column(name="blocked_id")
     private int blockedId;
-
+    //FK
     @Column(name="feedback_id")
     private int feedbackId;
 
