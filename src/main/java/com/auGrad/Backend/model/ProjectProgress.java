@@ -1,6 +1,5 @@
 package com.auGrad.Backend.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
@@ -11,29 +10,22 @@ import javax.persistence.*;
 @Component
 @Getter
 @Setter
-@Table(name="blocked")
-public class Blocked {
+@Table(name="project_progress")
+public class ProjectProgress {
     //PK
     @Id
-    @Column(name="blocked_id")
+    @Column(name="projectProgress_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int blockedId;
+    private int projectProgressId;
+
     //FK
     @Column(name="batch_id")
     private int batchId;
+
     //FK
-    @Column(name="emp_id")
-    private int empId;
-    //FK
-    @Column(name="job_id")
-    private int jobId;
+    @Column(name="project_id")
+    private int projectId;
 
-
-
-    @Column(name="client")
-    private int client;
-
-
-
-
+    @Column(name="projectProgress_status")
+    private boolean projectProgressStatus;
 }
