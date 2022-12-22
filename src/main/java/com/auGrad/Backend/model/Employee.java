@@ -1,12 +1,12 @@
 package com.auGrad.Backend.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Component
@@ -50,6 +50,22 @@ public class Employee {
     //FK
     @Column(name="feedback_id")
     private int feedbackId;
+
+    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchesList;
+
+    @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id")
+
+    private List<Batch> blockedList;
+
+    @OneToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id")
+
+    private List<Batch> feedbackList;
+
 
 
 
