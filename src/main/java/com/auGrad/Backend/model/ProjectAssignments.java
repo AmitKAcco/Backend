@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Setter
@@ -38,6 +39,22 @@ public class ProjectAssignments {
 
     @Column(name = "project_name")
     private String projectName;
+
+    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchesList;
+
+    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+
+    private List<Employee> employeeList;
+
+
+    @OneToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
+
+    private List<Employee> projectList;
 
 
 
