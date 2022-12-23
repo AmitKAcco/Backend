@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Component
@@ -25,4 +26,10 @@ public class TrainingCurriculum {
     //FK
     @Column(name="batch_id")
     private int batchId;
+
+    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchesList;
+
 }

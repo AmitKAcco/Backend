@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Component
@@ -28,4 +29,15 @@ public class ProjectProgress {
 
     @Column(name="projectProgress_status")
     private boolean projectProgressStatus;
+
+    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchesList;
+
+    @OneToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
+
+    private List<Batch> projectList;
+
 }

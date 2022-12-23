@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Component
@@ -31,5 +32,15 @@ public class Buddy {
 
     @Column(name="buddy_name")
     private String buddyName;
+
+    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchList;
+
+    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+
+    private List<Employee> employeeList;
 
 }

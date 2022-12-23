@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Setter
@@ -22,9 +23,13 @@ public class ProjectTopics {
     private String projectName;
 
     @Column(name = "batchId")
+    private int batchId; // FK
+
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batchId", referencedColumnName = "batch_id")
-    private int batchId;
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchesList;
+
 
 
 }

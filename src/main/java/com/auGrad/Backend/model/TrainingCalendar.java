@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Component
@@ -38,6 +39,16 @@ public class TrainingCalendar {
 
     @Column(name="trainingCalendar_approve")
     private boolean trainingCalendarApprove;
+
+    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+
+    private List<Batch> batchesList;
+
+    @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+
+    private List<Batch> topicList;
 
 
 
