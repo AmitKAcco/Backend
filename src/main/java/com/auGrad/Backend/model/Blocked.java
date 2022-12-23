@@ -40,12 +40,12 @@ public class Blocked {
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
 
     private List<Employee> employeeList;
 
-    @OneToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "job_id", referencedColumnName = "job_id")
 
     private List<Job> jobList;
