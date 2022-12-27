@@ -38,7 +38,7 @@ public class Buddy {
 
     private List<Batch> batchList;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
 
     private List<Employee> employeeList;

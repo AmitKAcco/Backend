@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Setter
@@ -21,5 +22,11 @@ public class Batch {
     private String batchName;
     @Column(name = "vertical")
     private String vertical;
+
+//    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+//
+//    private List<Employee> employeeList;
+//
 
 }

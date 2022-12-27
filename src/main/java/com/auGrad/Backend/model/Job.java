@@ -29,9 +29,24 @@ public class Job {
     @Column(name="openings")
     private int openings;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @Column(name = "requirement_id")
+    private int requirement_id;
+
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
+
+    @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id")
+
+    private List<Blocked> blockedList;
+
+    @ManyToMany(targetEntity = Requirements.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "requirement_id", referencedColumnName = "requirement_id")
+
+    private List<Requirements> requirementsList;
+
+
 
 }
