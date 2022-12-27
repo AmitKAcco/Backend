@@ -32,13 +32,13 @@ public class MockInterview {
     @Column(name = "batch_id")
     private int batchId;  // Foreign Key
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
     private List<Employee> employeeList;
 

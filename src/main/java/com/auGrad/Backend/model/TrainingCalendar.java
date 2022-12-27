@@ -41,14 +41,14 @@ public class TrainingCalendar {
     private boolean trainingCalendarApprove;
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
 
     @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)
 
-    private List<Batch> topicList;
+    private List<TrainingCurriculum> topicList;
 
 
 

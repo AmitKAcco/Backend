@@ -27,20 +27,20 @@ public class Interview {
     @Column(name = "job_id")
     private int jobId; // Foreign Key
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @OneToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private List<Batch> batchesList;
+    private Batch batches;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private List<Employee> employeeList;
+    private Employee employeeId;
 
-    @OneToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
+    @ManyToOne(targetEntity = Job.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
 
-    private List<Job> jobList;
+    private Job jobs;
 
 
 }

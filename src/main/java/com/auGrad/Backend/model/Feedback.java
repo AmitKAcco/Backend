@@ -29,14 +29,13 @@ public class Feedback {
     @Column(name="feedback_note")
     private String feedbackNote;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
-
-    private List<Employee> employeeList;
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL,mappedBy = "feedbackList")
+   //@JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+    private List<Employee> employeeId;
 
 }

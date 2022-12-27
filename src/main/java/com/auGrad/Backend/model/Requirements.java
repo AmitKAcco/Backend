@@ -33,15 +33,18 @@ public class Requirements {
     @Column(name = "location")
     private String location;
 
-    @Column(name = "clients")
-    private String clients;
-
     @Column(name = "gender")
     private String gender;
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
+
+    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL, mappedBy = "requirementsList")
+//    @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
+
+    private List<Job> jobList;
+
 
 }

@@ -52,17 +52,24 @@ public class Employee {
     private int feedbackId;
 
     @ManyToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private List<Batch> batchesList;
+    private Batch batchesList;
 
-    @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id")
+    @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeId")
+    //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
 
     private List<Batch> blockedList;
 
-    @OneToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id")
+
+//    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+//
+//    private List<Batch> blockedList;
+
+
+    @ManyToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
 
     private List<Batch> feedbackList;
 

@@ -1,3 +1,4 @@
+//Don't use it
 package com.auGrad.Backend.model;
 
 import lombok.Getter;
@@ -31,12 +32,12 @@ public class ProjectProgress {
     private boolean projectProgressStatus;
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
 
     @OneToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
+    @JoinColumn(name = "project_id", referencedColumnName = "project_id", insertable = false, updatable = false)
 
     private List<Batch> projectList;
 
