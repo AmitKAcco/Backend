@@ -29,7 +29,6 @@ public class TrainingCurriculum {
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
     private List<Batch> batchesList;
 
 }

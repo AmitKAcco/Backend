@@ -22,7 +22,7 @@ public class ProjectTopics {
     @Column(name = "projectName")
     private String projectName;
 
-    @Column(name = "batchId")
+    @Column(name = "batch_id")
     private int batchId; // FK
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
