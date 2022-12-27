@@ -45,7 +45,7 @@ public class TrainingCalendar {
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
 
     private List<Batch> topicList;

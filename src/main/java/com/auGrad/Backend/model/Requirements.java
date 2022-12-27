@@ -33,9 +33,6 @@ public class Requirements {
     @Column(name = "location")
     private String location;
 
-    @Column(name = "clients")
-    private String clients;
-
     @Column(name = "gender")
     private String gender;
 
@@ -43,5 +40,11 @@ public class Requirements {
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
+
+    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
+
+    private List<Job> jobList;
+
 
 }

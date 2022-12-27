@@ -1,3 +1,4 @@
+//Don't use it
 package com.auGrad.Backend.model;
 
 import lombok.Getter;
