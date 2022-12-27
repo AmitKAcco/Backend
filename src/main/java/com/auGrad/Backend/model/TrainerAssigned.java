@@ -55,17 +55,17 @@ public class TrainerAssigned {
     private String trainingObjective;
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
 
     @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
     private List<Employee> employeeList;
 
     @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)
 
     private List<Batch> topicList;
 

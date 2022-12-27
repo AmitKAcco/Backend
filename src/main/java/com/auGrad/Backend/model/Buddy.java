@@ -34,13 +34,13 @@ public class Buddy {
     private String buddyName;
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchList;
 
     @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private List<Employee> employeeList;
+    private Employee employeeId;
 
 }

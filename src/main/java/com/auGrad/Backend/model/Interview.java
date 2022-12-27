@@ -28,19 +28,19 @@ public class Interview {
     private int jobId; // Foreign Key
 
     @OneToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private List<Batch> batchesList;
+    private Batch batches;
 
     @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private List<Employee> employeeList;
+    private Employee employeeId;
 
     @ManyToOne(targetEntity = Job.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
+    @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
 
-    private List<Job> jobList;
+    private Job jobs;
 
 
 }

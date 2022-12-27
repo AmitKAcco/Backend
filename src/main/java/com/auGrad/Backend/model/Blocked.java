@@ -36,17 +36,22 @@ public class Blocked {
     private int client;
 
     @ManyToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
 
     @ManyToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private List<Employee> employeeList;
+    private Employee employeeId;
+
+//    @ManyToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+//
+//    private List<Employee> employeeList;
 
     @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
+    @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
 
     private List<Job> jobList;
 
