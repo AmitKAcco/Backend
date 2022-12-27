@@ -12,12 +12,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
+@SequenceGenerator(name="seq1", initialValue=8000)
 @Table(name="employee")
 public class Employee {
     //PK
     @Id
     @Column(name="emp_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq1")
     private int empId;
 
     //FK
