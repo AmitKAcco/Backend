@@ -17,6 +17,8 @@ public class TrainingCurriculumServiceImplementation implements TrainingCurricul
     private TrainingCurriculumRepo trainingCurriculumRepo;
 
 
+    @Autowired
+    TrainingCurriculum trainingCurriculumAdded;
     @Override
     public TrainingCurriculum createTopic(TrainingCurriculum trainingCurriculum){
         TrainingCurriculum trainingCurriculumAdded =  trainingCurriculumRepo.save(trainingCurriculum);
