@@ -28,7 +28,7 @@ public class TrainingCurriculum {
     @Column(name="batch_id")
     private int batchId;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
@@ -37,6 +37,10 @@ public class TrainingCurriculum {
 //    //@JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
 //
 //    private TrainingCalendar trainingCalendarList;
+@ManyToMany(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL,mappedBy = "topicList")
+
+
+private List<TrainingCalendar> trainingCalendarList;
 
 
     @ManyToMany(targetEntity = Evaluation.class, cascade = CascadeType.ALL,mappedBy = "topicList")

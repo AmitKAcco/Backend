@@ -12,13 +12,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-@SequenceGenerator(name="seq6", initialValue=800,allocationSize = 1)
+//@SequenceGenerator(name="seq6", initialValue=800,allocationSize = 1)
 @Table(name="training_calendar")
 public class TrainingCalendar {
     //PK
     @Id
     @Column(name="trainingCalendar_id")
-    @GeneratedValue(strategy = GenerationType.AUTO,generator="seq6")
+    @GeneratedValue(strategy = GenerationType.IDENTITY/*generator="seq6"*/)
     private int trainingCalendarId;
 
     //FK
@@ -41,12 +41,12 @@ public class TrainingCalendar {
     @Column(name="trainingCalendar_approve")
     private boolean trainingCalendarApprove;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
 
     private List<TrainingCurriculum> topicList;

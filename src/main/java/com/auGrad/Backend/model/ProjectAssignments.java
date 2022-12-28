@@ -40,21 +40,21 @@ public class ProjectAssignments {
     @Column(name = "project_name")
     private String projectName;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
 
     private List<Employee> employeeList;
 
 
-    @OneToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id", referencedColumnName = "project_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id", referencedColumnName = "project_id")
 
-    private List<Employee> projectList;
+    private List<ProjectTopics> projectList;
 
 
 
