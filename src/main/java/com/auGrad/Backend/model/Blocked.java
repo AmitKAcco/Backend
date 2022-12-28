@@ -11,13 +11,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-@SequenceGenerator(name="seq2", initialValue=1000)
+@SequenceGenerator(name="seq2", initialValue=1000,allocationSize = 1)
 @Table(name="blocked")
 public class Blocked {
     //PK
     @Id
     @Column(name="blocked_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq2")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator="seq2")
     private int blockedId;
     //FK
 
