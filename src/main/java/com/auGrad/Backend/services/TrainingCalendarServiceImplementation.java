@@ -15,6 +15,9 @@ public class TrainingCalendarServiceImplementation implements TrainingCalendarSe
     private TrainingCalendarRepo trainingCalendarRepo;
     @Autowired
     private TrainingCurriculumRepo trainingCurriculumRepo;
+
+    @Autowired
+    private TrainingCalendar trainingCalendarAdded;
     @Override
     public TrainingCalendar createTrainingCalendar(TrainingCalendar trainingCalendar){
         TrainingCalendar trainingCalendarAdded =  trainingCalendarRepo.save(trainingCalendar);
