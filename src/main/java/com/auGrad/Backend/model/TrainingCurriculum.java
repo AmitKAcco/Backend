@@ -11,12 +11,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
+@SequenceGenerator(name="seq4", initialValue=500,allocationSize = 1)
 @Table(name="training_curriculum")
 public class TrainingCurriculum {
     //PK
     @Id
     @Column(name="topic_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator="seq4")
     private int topicId;
 
 
@@ -31,5 +32,10 @@ public class TrainingCurriculum {
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
+
+//    @ManyToOne(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL)
+//    //@JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+//
+//    private TrainingCalendar trainingCalendarList;
 
 }

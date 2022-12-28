@@ -15,6 +15,9 @@ import java.util.List;
 public class TrainingCurriculumServiceImplementation implements TrainingCurriculumService {
     @Autowired
     private TrainingCurriculumRepo trainingCurriculumRepo;
+
+
+    @Override
     public TrainingCurriculum createTopic(TrainingCurriculum trainingCurriculum){
         TrainingCurriculum trainingCurriculumAdded =  trainingCurriculumRepo.save(trainingCurriculum);
         return trainingCurriculumAdded;

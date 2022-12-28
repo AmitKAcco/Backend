@@ -5,7 +5,6 @@ import com.auGrad.Backend.model.TrainingCurriculum;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public interface TrainingCurriculumService {
     TrainingCurriculum createTopic(TrainingCurriculum trainingCurriculum);
