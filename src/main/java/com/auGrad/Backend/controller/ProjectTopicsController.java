@@ -25,11 +25,11 @@ public class ProjectTopicsController {
             return ResponseEntity.ok().body(this.projectTopicsService.createProjectTopics(projectTopics));
         }
         catch (Exception e){
-            throw new NoObjectFoundException("Mentor already exists");
+            throw new NoObjectFoundException("Project topic already exists");
         }
     }
 
-    @GetMapping("/allMentors")
+    @GetMapping("/allProjectTopics")
     private ResponseEntity<List<ProjectTopics>> getAllProjectTopics(){
         return ResponseEntity.ok().body(this.projectTopicsService.getProjectTopics());
     }

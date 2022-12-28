@@ -29,5 +29,18 @@ public class Batch {
 //
 //    private List<Employee> employeeList;
 //
+@ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
+
+
+private List<TrainingCurriculum> trainingCurriculumList;
+    @ManyToMany(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
+
+
+    private List<TrainingCalendar> trainingCalendarList;
+    @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
+
+
+    private List<ProjectAssignments> projectAssignmentsList;
 
 }
+

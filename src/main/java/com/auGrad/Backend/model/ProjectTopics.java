@@ -26,9 +26,14 @@ public class ProjectTopics {
     private int batchId; // FK
 
     @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
+
+    @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL,mappedBy = "projectList")
+
+
+    private List<ProjectAssignments> projectAssignmentsList;
 
 
 
