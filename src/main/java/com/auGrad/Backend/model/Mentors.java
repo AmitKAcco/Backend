@@ -24,8 +24,11 @@ public class Mentors {
     private int batchId;
 
     //FK
-    @Column(name="emp_id")
-    private int empId;
+    @Column(name="emp_id_grad")
+    private int empIdGrad;
+
+    @Column(name="emp_id_mentor")
+    private int empIdMentor;
 
     @Column(name="grad_name")
     private String gradName;
@@ -48,9 +51,14 @@ public class Mentors {
     private List<Batch> batchesList;
 
     @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+    @JoinColumn(name = "emp_id_grad", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private Employee employeeId;
+    private Employee employeeIdGrad;
+
+    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id_mentor", referencedColumnName = "emp_id", insertable = false, updatable = false)
+
+    private Employee employeeIdMentor;
 
 
 }
