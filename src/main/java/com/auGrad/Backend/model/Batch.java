@@ -24,16 +24,20 @@ public class Batch {
     @Column(name = "vertical")
     private String vertical;
 
-//    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    //    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
 //
 //    private List<Employee> employeeList;
 //
+
 @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
 
 
 private List<TrainingCurriculum> trainingCurriculumList;
-    @ManyToMany(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
+
+  
+
+
 
 
     private List<TrainingCalendar> trainingCalendarList;
@@ -45,4 +49,3 @@ private List<TrainingCurriculum> trainingCurriculumList;
     private List<Evaluation> evaluationId;
 
 }
-

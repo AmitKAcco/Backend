@@ -42,4 +42,9 @@ public class TrainingCurriculum {
 
 private List<TrainingCalendar> trainingCalendarList;
 
+
+    @ManyToMany(targetEntity = Evaluation.class, cascade = CascadeType.ALL,mappedBy = "topicList")
+    private List<Evaluation> evaluationId;
+
+
 }

@@ -104,7 +104,9 @@ public class Employee {
     //PK
     @Id
     @Column(name="emp_id")
-    //   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+
+ // @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;
 
@@ -160,3 +162,4 @@ public class Employee {
     @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
 
     private List<Feedback> feedbackList;}
+

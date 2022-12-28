@@ -29,6 +29,7 @@ public class BuddyController {
     }
     @GetMapping("/allBuddy")
     private ResponseEntity<List<Buddy>> getAllBuddy(){
+
         return ResponseEntity.ok().body(this.buddyService.getBuddy());
     }
 }

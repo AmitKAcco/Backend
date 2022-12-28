@@ -26,6 +26,9 @@ public class Evaluation {
     @Column(name = "emp_id")
     private int empId; // foreign Key
 
+    @Column(name = "emp_name")
+    private String empName;
+
     @Column(name = "topic_id")
     private int topicId; // foreign Key
 
@@ -38,20 +41,20 @@ public class Evaluation {
     @Column(name = "feedback")
     private String feedback;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
 
-    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
 
     private List<Employee> employeeList;
 
-    @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)
+    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
 
-    private List<Employee> topicList;
+    private List<TrainingCurriculum> topicList;
 
 
 
