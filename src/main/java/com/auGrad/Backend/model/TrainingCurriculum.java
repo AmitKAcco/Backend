@@ -44,7 +44,9 @@ private List<TrainingCalendar> trainingCalendarList;
 
 
     @ManyToMany(targetEntity = Evaluation.class, cascade = CascadeType.ALL,mappedBy = "topicList")
-    private List<Evaluation> evaluationId;
+    private List<Evaluation> evaluationList;
 
 
+    @ManyToMany(targetEntity = TrainerAssigned.class, cascade = CascadeType.ALL,mappedBy = "topicList")
+    private List<TrainerAssigned> trainerAssignedList;
 }
