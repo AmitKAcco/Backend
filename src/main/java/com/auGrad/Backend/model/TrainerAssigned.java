@@ -67,7 +67,7 @@ public class TrainerAssigned {
     @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)
 
-    private List<Batch> topicList;
+    private List<TrainingCurriculum> topicList;
 
 
 

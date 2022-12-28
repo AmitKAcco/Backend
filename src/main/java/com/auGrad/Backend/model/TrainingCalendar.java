@@ -12,12 +12,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-@Table(name="training_curriculum")
+@SequenceGenerator(name="seq5", initialValue=500,allocationSize = 1)
+@Table(name="training_calendar")
 public class TrainingCalendar {
     //PK
     @Id
     @Column(name="trainingCalendar_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO,generator="seq5")
     private int trainingCalendarId;
 
     //FK
@@ -32,7 +33,7 @@ public class TrainingCalendar {
     private String trainingTopicName;
 
     @Column(name="trainingCalendar_date")
-    private Date trainingCalendar_date;
+    private Date trainingCalendarDate;
 
     @Column(name="training_session")
     private String trainingSession;
@@ -46,7 +47,7 @@ public class TrainingCalendar {
     private List<Batch> batchesList;
 
     @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)
+    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
 
     private List<TrainingCurriculum> topicList;
 
