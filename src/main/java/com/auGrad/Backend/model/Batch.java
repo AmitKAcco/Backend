@@ -24,10 +24,7 @@ public class Batch {
     @Column(name = "vertical")
     private String vertical;
 
-//    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
-//
-//    private List<Employee> employeeList;
-//
+    @ManyToMany(targetEntity = Evaluation.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Evaluation> evaluationId;
 
 }

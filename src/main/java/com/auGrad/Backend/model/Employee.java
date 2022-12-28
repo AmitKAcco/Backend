@@ -12,13 +12,14 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-@SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
+//@SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
 @Table(name="employee")
 public class Employee {
     //PK
     @Id
     @Column(name="emp_id")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator="seq1")
+ //   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;
 
     //FK
@@ -60,7 +61,7 @@ public class Employee {
     @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeId")
     //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
 
-    private List<Batch> blockedList;
+    private List<Blocked> blockedList;
 
 
 //    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
@@ -72,7 +73,9 @@ public class Employee {
     @ManyToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
 
-    private List<Batch> feedbackList;
+    private List<Feedback> feedbackList;
+
+
 
 
 

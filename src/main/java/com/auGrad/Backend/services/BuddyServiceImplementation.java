@@ -19,7 +19,8 @@ public class BuddyServiceImplementation implements BuddyService{
     }
 
     @Override
-    public List<Buddy> getBuddy() {
+    public List<Buddy> getBuddy()
+    {
         return this.buddyRepo.findAll();
     }
 }

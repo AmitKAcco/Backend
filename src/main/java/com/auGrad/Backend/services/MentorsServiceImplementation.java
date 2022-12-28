@@ -34,7 +34,7 @@ public class MentorsServiceImplementation implements MentorsService{
         Optional<Employee> employeeobj2 = employeeRepo.findById(mentors.getEmpIdGrad());
         if(employeeobj2.isPresent()){
             Employee e=employeeobj2.get();
-            mentorsAdded.setMentorName(e.getEmployeeName());
+            mentorsAdded.setGradName(e.getEmployeeName());
         }
         //mentorsAdded.setMentorName(employee.getEmployeeName(employeeRepo.findAllById(mentorsAdded.getMentorId())));
         mentorsRepo.save(mentorsAdded);
