@@ -27,6 +27,9 @@ public class Feedback {
     @Column(name="emp_id")
     private int empId;
 
+    @Column(name="emp_name")
+    private int empName;
+
     @Column(name="feedback_note")
     private String feedbackNote;
 
