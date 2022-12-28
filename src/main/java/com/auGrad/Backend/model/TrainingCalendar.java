@@ -12,13 +12,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-@SequenceGenerator(name="seq5", initialValue=500,allocationSize = 1)
+@SequenceGenerator(name="seq6", initialValue=800,allocationSize = 1)
 @Table(name="training_calendar")
 public class TrainingCalendar {
     //PK
     @Id
     @Column(name="trainingCalendar_id")
-    @GeneratedValue(strategy = GenerationType.AUTO,generator="seq5")
+    @GeneratedValue(strategy = GenerationType.AUTO,generator="seq6")
     private int trainingCalendarId;
 
     //FK

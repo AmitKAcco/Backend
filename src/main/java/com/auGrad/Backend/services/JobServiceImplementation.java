@@ -12,14 +12,19 @@ public class JobServiceImplementation implements JobService{
     @Autowired
     private JobRepo jobRepo;
 
+    @Autowired
+    private Job jobAdded;
     @Override
-    public Job createJob(Job job) {
-        Job jobAdded = jobRepo.save(job);
+    public Job createJob(Job job){
+        Job jobAdded =  jobRepo.save(job);
+
         return jobAdded;
+
     }
 
     @Override
-    public List<Job> getJob() {
+    public List<Job> getJob(){
+
         return this.jobRepo.findAll();
     }
 }
