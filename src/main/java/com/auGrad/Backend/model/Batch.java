@@ -41,6 +41,8 @@ private List<TrainingCurriculum> trainingCurriculumList;
 
 
     private List<ProjectAssignments> projectAssignmentsList;
+    @ManyToMany(targetEntity = Evaluation.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Evaluation> evaluationId;
 
 }
 
