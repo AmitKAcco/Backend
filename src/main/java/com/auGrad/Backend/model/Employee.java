@@ -61,7 +61,7 @@ public class Employee {
     @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeId")
     //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
 
-    private List<Batch> blockedList;
+    private List<Blocked> blockedList;
 
 
 //    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
@@ -73,7 +73,9 @@ public class Employee {
     @ManyToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
 
-    private List<Batch> feedbackList;
+    private List<Feedback> feedbackList;
+
+
 
 
 

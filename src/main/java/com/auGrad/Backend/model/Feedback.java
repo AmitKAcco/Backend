@@ -28,7 +28,7 @@ public class Feedback {
     private int empId;
 
     @Column(name="emp_name")
-    private int empName;
+    private String empName;
 
     @Column(name="feedback_note")
     private String feedbackNote;
