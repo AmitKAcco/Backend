@@ -11,12 +11,13 @@ import java.util.List;
 @Component
 @Getter
 @Setter
+@SequenceGenerator(name="seq7", initialValue=300,allocationSize = 1)
 @Table(name="job")
 public class Job {
     //PK
     @Id
     @Column(name="job_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="seq7")
     private int jobId;
 
     //FK

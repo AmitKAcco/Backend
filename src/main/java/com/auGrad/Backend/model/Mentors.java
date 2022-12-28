@@ -30,6 +30,9 @@ public class Mentors {
     @Column(name="grad_name")
     private String gradName;
 
+    @Column(name="mentor_name")
+    private String mentorName;
+
     @Column(name="client_project_name")
     private String clientProjectName;
 
