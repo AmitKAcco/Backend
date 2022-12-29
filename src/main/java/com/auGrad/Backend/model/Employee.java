@@ -132,21 +132,24 @@ public class Employee {
     @Column(name="date_of_birth")
     private Date dateOfBirth;
 
-    @Column(name="delivery_director")
+   @Column(name = "gender")
+   private String gender;
+
+   @Column(name="delivery_director")
     private String deliveryDirector;
     //FK
-    @Column(name="blocked_id")
-    private int blockedId;
+//    @Column(name="blocked_id")
+//    private int blockedId;
     //FK
     @Column(name="feedback_id")
     private int feedbackId;
 
-    @ManyToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private Batch batchesList;
+    private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeId")
+    @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeList")
     //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
 
     private List<Blocked> blockedList;
@@ -171,6 +174,9 @@ public class Employee {
 
     @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<MockInterview> mockInterviewList;
+
+    @ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+    private List<Interview> interviewList;
 
 }
 

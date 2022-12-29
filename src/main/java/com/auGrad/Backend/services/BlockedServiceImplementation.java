@@ -35,6 +35,7 @@ public class BlockedServiceImplementation implements BlockedService{
             Job j = jobObj.get();
             blockedAdded.setClient(j.getClient());
         }
+        blockedRepo.save(blockedAdded);
 
 
         return blockedAdded;

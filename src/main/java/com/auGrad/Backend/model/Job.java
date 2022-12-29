@@ -31,8 +31,12 @@ public class Job {
     @Column(name="client")
     private String client;
 
-    @Column(name="openings")
-    private int openings;
+    @Column(name = "vertical")
+    private String vertical;
+
+
+//    @Column(name="openings")
+//    private int openings;
 
     @Column(name = "requirement_id")
     private int requirement_id;
@@ -50,10 +54,11 @@ public class Job {
 
 
     @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL, mappedBy = "jobList")
-//    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
-
     private List<Blocked> blockedList;
 
+
+    @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL, mappedBy = "jobList")
+    private List<Interview> interviewList;
 
 
 }

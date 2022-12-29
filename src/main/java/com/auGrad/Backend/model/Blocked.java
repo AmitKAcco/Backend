@@ -17,7 +17,7 @@ public class Blocked {
     //PK
     @Id
     @Column(name="blocked_id")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator="seq2")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq2")
     private int blockedId;
     //FK
 
@@ -56,6 +56,9 @@ public class Blocked {
     @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
 
     private List<Job> jobList;
+
+    @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL,mappedBy = "blockedList")
+    private List<Interview> interviewList;
 
 
 

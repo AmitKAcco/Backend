@@ -12,10 +12,15 @@ import java.util.List;
 @Getter
 @Component
 @Table(name = "ProjectAssignments")
+//100
+@SequenceGenerator(name="seqProj", initialValue=100,allocationSize=1)
+
 public class ProjectAssignments {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqProj")
+
+    // @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "projectAssignments_id")
     private int projectAssignmentsId;
 
