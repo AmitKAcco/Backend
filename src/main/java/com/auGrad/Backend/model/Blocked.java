@@ -17,7 +17,7 @@ public class Blocked {
     //PK
     @Id
     @Column(name="blocked_id")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator="seq2")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq2")
     private int blockedId;
     //FK
 
