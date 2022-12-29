@@ -21,8 +21,8 @@ public class Batch {
     private int batchId;
     @Column(name = "batchName")
     private String batchName;
-    @Column(name = "vertical")
-    private String vertical;
+//    @Column(name = "vertical")
+//    private String vertical;
 
     //    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
@@ -62,11 +62,16 @@ public class Batch {
     private List<MockInterview> mockInterviewList;
 
     @ManyToMany(targetEntity = Buddy.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
-    private List<Buddy> BuddyList;
+    private List<Buddy> buddyList;
 
     @ManyToMany(targetEntity = Blocked.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
-    private List<Blocked> BlockedList;
+    private List<Blocked> blockedList;
 
+    @ManyToMany(targetEntity = Dashboard.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Dashboard> dashboardList;
+
+    @ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Interview> interviewList;
 
     @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
     private List<CheckBlocked> checkBlockedList;

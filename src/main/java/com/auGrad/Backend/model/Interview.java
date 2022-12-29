@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.util.List;
 
 @Entity
@@ -26,21 +27,30 @@ public class Interview {
     private String gradName;
     @Column(name = "job_id")
     private int jobId; // Foreign Key
+    @Column(name = "time")
+    private Time time;
+    @Column(name = "block_status")
+    private boolean block_status;
 
-    @OneToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private Batch batches;
+    private List<Batch> batchesList;
 
-    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private Employee employeeId;
+    private List<Employee> employeeList;
 
-    @ManyToOne(targetEntity = Job.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
 
-    private Job jobs;
+    private List<Job> jobList;
 
+
+    @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+
+    private List<Blocked> blockedList;
 
 }

@@ -57,6 +57,9 @@ public class Blocked {
 
     private List<Job> jobList;
 
+    @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL,mappedBy = "blockedList")
+    private List<Interview> interviewList;
+
 
 
 }

@@ -11,10 +11,14 @@ import java.util.List;
 @Setter
 @Getter
 @Component
+//500
+@SequenceGenerator(name="seqReq", initialValue=500,allocationSize=1)
+
 @Table(name = "Requirements")
 public class Requirements {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqReq")
     @Column(name = "requirement_id")
     private int requirementId;
 
