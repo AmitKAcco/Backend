@@ -18,7 +18,7 @@ public class TrainingCalendar {
     //PK
     @Id
     @Column(name="trainingCalendar_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY/*generator="seq6"*/)
+    @GeneratedValue(strategy = GenerationType.AUTO/*generator="seq6"*/)
     private int trainingCalendarId;
 
     //FK

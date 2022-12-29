@@ -32,9 +32,10 @@ public class TrainerAssigned {
     @Column(name="topic_name")
     private String topicName;
 
-    //FK
+
     @Column(name="emp_id")
     private int empId;
+
 
 //    @Column(name="grad_name")
 //    private String gradName;
@@ -59,10 +60,12 @@ public class TrainerAssigned {
 
     private List<Batch> batchesList;
 
+
     @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
     private List<Employee> employeeList;
+
 
     @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)

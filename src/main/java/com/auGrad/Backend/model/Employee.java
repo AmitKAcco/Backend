@@ -105,7 +105,9 @@ public class Employee {
     @Id
     @Column(name="emp_id")
 
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
+
+ @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
+
 
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;

@@ -21,7 +21,7 @@ public class TrainingCalendarServiceImplementation implements TrainingCalendarSe
     @Override
     public TrainingCalendar createTrainingCalendar(TrainingCalendar trainingCalendar){
         TrainingCalendar trainingCalendarAdded =  trainingCalendarRepo.save(trainingCalendar);
-        trainingCalendarAdded.setTopicId((Integer) trainingCalendarRepo.findTopicByTopicId(trainingCalendar.getTrainingTopicName()));
+        //trainingCalendarAdded.setTopicId((Integer) trainingCalendarRepo.findTopicByTopicId(trainingCalendar.getTrainingTopicName()));
         return trainingCalendarAdded;
 
     }
