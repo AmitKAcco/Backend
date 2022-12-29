@@ -98,16 +98,16 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-//@SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
+@SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
 @Table(name="employee")
 public class Employee {
     //PK
     @Id
     @Column(name="emp_id")
 
- // @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;
 
     //FK
@@ -141,16 +141,16 @@ public class Employee {
     @Column(name="feedback_id")
     private int feedbackId;
 
-    @ManyToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private Batch batchesList;
+    private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeId")
-    //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
-
-    private List<Blocked> blockedList;
-
+//    @OneToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeId")
+//    //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+//
+//    private List<Blocked> blockedList;
+//
 
 //    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
@@ -171,6 +171,14 @@ public class Employee {
 
     @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<MockInterview> mockInterviewList;
+
+
+  @ManyToMany(targetEntity = Buddy.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+  private List<Buddy> buddyList;
+
+
+  @ManyToMany(targetEntity = Blocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+  private List<Blocked> blockedList;
 
 }
 
