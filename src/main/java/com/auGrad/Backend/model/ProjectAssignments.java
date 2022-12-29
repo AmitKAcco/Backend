@@ -15,7 +15,7 @@ import java.util.List;
 public class ProjectAssignments {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "projectAssignments_id")
     private int projectAssignmentsId;
 

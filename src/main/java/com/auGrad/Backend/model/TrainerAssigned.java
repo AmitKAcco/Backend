@@ -33,11 +33,11 @@ public class TrainerAssigned {
     private String topicName;
 
     //FK
-    @Column(name="emp_id")
-    private int empId;
-
-    @Column(name="grad_name")
-    private String gradName;
+//    @Column(name="emp_id")
+//    private int empId;
+//
+//    @Column(name="grad_name")
+//    private String gradName;
 
     @Column(name="trainer_name1")
     private String trainerName1;
@@ -59,10 +59,10 @@ public class TrainerAssigned {
 
     private List<Batch> batchesList;
 
-    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
-
-    private List<Employee> employeeList;
+//    @OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+//
+//    private List<Employee> employeeList;
 
     @OneToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "topic_id", referencedColumnName = "topic_id", insertable = false, updatable = false)
