@@ -32,7 +32,7 @@ public class ProjectCalendar {
     @Column(name = "batch_id")
     private int batchId; // Foreign Key
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;

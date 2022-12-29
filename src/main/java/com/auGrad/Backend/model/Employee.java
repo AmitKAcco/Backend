@@ -161,5 +161,16 @@ public class Employee {
     @ManyToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
 
-    private List<Feedback> feedbackList;}
+    private List<Feedback> feedbackList;
+
+    @ManyToMany(targetEntity = TrainerAssigned.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+    private List<TrainerAssigned> trainerAssignedList;
+
+    @ManyToMany(targetEntity = ProjectAssignments.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+    private List<ProjectAssignments> projectAssignmentList;
+
+    @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+    private List<MockInterview> mockInterviewList;
+
+}
 

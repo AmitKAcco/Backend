@@ -31,16 +31,37 @@ public class Batch {
 //
 
 @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
-
-
 private List<TrainingCurriculum> trainingCurriculumList;
-    @ManyToMany(targetEntity = TrainingCalendar.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+
+@ManyToMany(targetEntity = TrainingCalendar.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
     private List<TrainingCalendar> trainingCalendarList;
+
+
     @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
-
-
     private List<ProjectAssignments> projectAssignmentsList;
+
     @ManyToMany(targetEntity = Evaluation.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
-    private List<Evaluation> evaluationId;
+    private List<Evaluation> evaluationList;
+
+    @ManyToMany(targetEntity = TrainerAssigned.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<TrainerAssigned> trainerAssignedList;
+
+    @ManyToMany(targetEntity = Requirements.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Requirements> requirementList;
+
+    @ManyToMany(targetEntity = ProjectTopics.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<ProjectTopics> projectTopicList;
+
+    @ManyToMany(targetEntity = ProjectCalendar.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<ProjectCalendar> projectCalendarList;
+
+    @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<MockInterview> mockInterviewList;
+
+
+
+
+
+
 
 }
