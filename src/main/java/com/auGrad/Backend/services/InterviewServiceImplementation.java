@@ -68,7 +68,7 @@ public class InterviewServiceImplementation implements InterviewService{
             Job j = jobobj.get();
             //interviewAdded.setGradName(j.getClient());
             obj.setClient(j.getClient());
-            
+
 
         }
         blockedRepo.save(obj);
