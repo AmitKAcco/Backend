@@ -32,9 +32,9 @@ public class TrainerAssigned {
     @Column(name="topic_name")
     private String topicName;
 
-
-    @Column(name="emp_id")
-    private int empId;
+//
+//    @Column(name="emp_id")
+//    private int empId;
 
 
 //    @Column(name="grad_name")
