@@ -68,5 +68,8 @@ public class Batch {
     private List<Blocked> BlockedList;
 
 
+    @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<CheckBlocked> checkBlockedList;
+
 
 }
