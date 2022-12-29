@@ -29,11 +29,14 @@ public class Batch {
 //
 //    private List<Employee> employeeList;
 //
+    @ManyToMany(targetEntity = Employee.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Employee> employeeList;
 
-@ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
-private List<TrainingCurriculum> trainingCurriculumList;
 
-@ManyToMany(targetEntity = TrainingCalendar.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
+    private List<TrainingCurriculum> trainingCurriculumList;
+
+    @ManyToMany(targetEntity = TrainingCalendar.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
     private List<TrainingCalendar> trainingCalendarList;
 
 
@@ -58,9 +61,11 @@ private List<TrainingCurriculum> trainingCurriculumList;
     @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
     private List<MockInterview> mockInterviewList;
 
+    @ManyToMany(targetEntity = Buddy.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Buddy> BuddyList;
 
-
-
+    @ManyToMany(targetEntity = Blocked.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
+    private List<Blocked> BlockedList;
 
 
 

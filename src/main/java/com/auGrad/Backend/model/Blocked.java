@@ -27,24 +27,25 @@ public class Blocked {
     //FK
     @Column(name="emp_id")
     private int empId;
+
+    @Column(name="emp_name")
+    private String empName;
     //FK
     @Column(name="job_id")
     private int jobId;
 
-
-
     @Column(name="client")
-    private int client;
+    private String client;
 
-    @ManyToOne(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private Batch batches;
+    private List<Batch> batchesList;
 
-    @ManyToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private Employee employeeId;
+    private List<Employee> employeeList;
 
 //    @ManyToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
