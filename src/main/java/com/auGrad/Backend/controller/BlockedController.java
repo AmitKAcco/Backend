@@ -24,7 +24,7 @@ public class BlockedController {
             return ResponseEntity.ok().body(this.blockedService.createBlocked(blocked));
         }
         catch (Exception e){
-            throw new NoObjectFoundException("Blocked Not found");
+            throw new NoObjectFoundException("Blocked Already Exist");
         }
     }
     @GetMapping("/allBlocked")

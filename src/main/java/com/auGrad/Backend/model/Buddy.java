@@ -15,17 +15,20 @@ import java.util.List;
 public class Buddy {
     //PK
     @Id
-    @Column(name="buddy_id")
+    @Column(name="buddyTable_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int buddyId;
+    private int buddyTableId;
 
     //FK
     @Column(name="batch_id")
     private int batchId;
 
     //FK
-    @Column(name="emp_id")
-    private int empId;
+    @Column(name="grad_id")
+    private int gradId;
+
+    @Column(name="buddy_id")
+    private int buddyId;
 
     @Column(name="grad_name")
     private String gradName;
@@ -33,14 +36,14 @@ public class Buddy {
     @Column(name="buddy_name")
     private String buddyName;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private List<Batch> batchList;
+    private List<Batch> batchesList;
 
-    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
 
-    private Employee employeeId;
+    private List<Employee> employeeList;
 
 }
