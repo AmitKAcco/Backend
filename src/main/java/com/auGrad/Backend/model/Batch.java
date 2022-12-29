@@ -36,6 +36,7 @@ private List<TrainingCurriculum> trainingCurriculumList;
 @ManyToMany(targetEntity = TrainingCalendar.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
     private List<TrainingCalendar> trainingCalendarList;
 
+
     @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL,mappedBy = "batchesList")
     private List<ProjectAssignments> projectAssignmentsList;
 
@@ -56,6 +57,8 @@ private List<TrainingCurriculum> trainingCurriculumList;
 
     @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "batchesList")
     private List<MockInterview> mockInterviewList;
+
+
 
 
 

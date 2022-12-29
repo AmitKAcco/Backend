@@ -98,16 +98,16 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-//@SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
+@SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
 @Table(name="employee")
 public class Employee {
     //PK
     @Id
     @Column(name="emp_id")
 
- // @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+ @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;
 
     //FK
