@@ -144,15 +144,16 @@ public class Employee {
     @Column(name="feedback_id")
     private int feedbackId;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+   @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+   @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
-    private List<Batch> batchesList;
+   private List<Batch> batchesList;
 
-    @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeList")
-    //@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+   @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeList")
+//@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
 
-    private List<Blocked> blockedList;
+
+   private List<Blocked> blockedList;
 
 
 //    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
@@ -175,8 +176,12 @@ public class Employee {
     @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<MockInterview> mockInterviewList;
 
-    @ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+
+@ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<Interview> interviewList;
+    @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+    private List<CheckBlocked> checkBlockedList;
+
 
 }
 

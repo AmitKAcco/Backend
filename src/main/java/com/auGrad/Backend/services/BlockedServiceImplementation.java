@@ -37,7 +37,7 @@ public class BlockedServiceImplementation implements BlockedService{
         }
         blockedRepo.save(blockedAdded);
 
-
+        blockedRepo.save(blockedAdded);
         return blockedAdded;
     }
 
