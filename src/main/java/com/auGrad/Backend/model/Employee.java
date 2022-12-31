@@ -140,9 +140,9 @@ public class Employee {
     //FK
 //    @Column(name="blocked_id")
 //    private int blockedId;
-    //FK
-    @Column(name="feedback_id")
-    private int feedbackId;
+//    //FK
+//    @Column(name="feedback_id")
+//    private int feedbackId;
 
    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
@@ -182,6 +182,8 @@ public class Employee {
     @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<CheckBlocked> checkBlockedList;
 
+//    @ManyToMany(targetEntity = Mentors.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//    private List<TrainerAssigned> trainerAssignedList;
 
 }
 
