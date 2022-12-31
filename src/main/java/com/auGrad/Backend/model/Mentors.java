@@ -45,7 +45,7 @@ public class Mentors {
     @Column(name="client")
     private String client;
 
-    @OneToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 
     private List<Batch> batchesList;
