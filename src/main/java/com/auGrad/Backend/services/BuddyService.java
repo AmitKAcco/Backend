@@ -11,4 +11,6 @@ public interface BuddyService {
     Buddy createBuddy(Buddy buddy);
 
     List<Buddy> getBuddy();
+
+    Buddy getBuddyByBatchId(int batchId);
 }

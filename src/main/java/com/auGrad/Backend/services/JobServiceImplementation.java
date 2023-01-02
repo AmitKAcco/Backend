@@ -27,4 +27,9 @@ public class JobServiceImplementation implements JobService{
 
         return this.jobRepo.findAll();
     }
+
+    @Override
+    public Job getJobByBatchId(int batchId) {
+        return this.jobRepo.findByBatchId(batchId);
+    }
 }

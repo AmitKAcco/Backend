@@ -36,4 +36,9 @@ public class FeedbackServiceImplementation implements FeedbackService{
     }
 
 
+    @Override
+    public Feedback getFeedbackByBatchId(int batchId) {
+        return this.feedbackRepo.findByBatchId(batchId);
+    }
+
 }

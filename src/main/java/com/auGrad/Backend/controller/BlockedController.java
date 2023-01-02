@@ -2,13 +2,11 @@ package com.auGrad.Backend.controller;
 
 import com.auGrad.Backend.exception.NoObjectFoundException;
 import com.auGrad.Backend.model.Blocked;
+import com.auGrad.Backend.model.Dashboard;
 import com.auGrad.Backend.services.BlockedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,10 @@ public class BlockedController {
     @GetMapping("/allBlocked")
     private ResponseEntity<List<Blocked>> getAllBlocked(){
         return ResponseEntity.ok().body(this.blockedService.getBlocked());
+    }
+    @GetMapping("/blockedByBatchId/{batchId}")
+    private ResponseEntity<Blocked> getBlockedByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.blockedService.getBlockedByBatchId(batchId));
     }
 }

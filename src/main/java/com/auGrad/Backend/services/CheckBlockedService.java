@@ -8,4 +8,6 @@ public interface CheckBlockedService {
     CheckBlocked createCheckBlocked(CheckBlocked checkBlocked);
 
     List<CheckBlocked> getCheckedBlocked();
+
+    CheckBlocked getCheckedBlockedByBatchId(int batchId);
 }

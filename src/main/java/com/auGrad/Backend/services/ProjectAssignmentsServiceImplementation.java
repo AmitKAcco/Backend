@@ -2,9 +2,9 @@ package com.auGrad.Backend.services;
 
 import com.auGrad.Backend.model.ProjectAssignments;
 import com.auGrad.Backend.model.ProjectTopics;
-import com.auGrad.Backend.model.TrainingCurriculum;
 import com.auGrad.Backend.repository.ProjectAssignmentsRepo;
 import com.auGrad.Backend.repository.ProjectTopicRepo;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +41,10 @@ public class ProjectAssignmentsServiceImplementation implements ProjectAssignmen
     public List<ProjectAssignments> getProjectAssignments(){
 
         return this.projectAssignmentsRepo.findAll();
+    }
+
+    @Override
+    public List<ProjectAssignments> saveAll(List<ProjectAssignments> projectAssignmentsList) {
+        return projectAssignmentsRepo.saveAll(projectAssignmentsList);
     }
 }

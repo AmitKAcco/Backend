@@ -32,4 +32,9 @@ public class EvaluationServiceImplementation implements EvaluationService{
     public List<Evaluation> getEvaluation() {
         return this.evaluationRepo.findAll();
     }
+
+    @Override
+    public Evaluation getEvaluationByBatchId(int batchId) {
+        return this.evaluationRepo.findByBatchId(batchId);
+    }
 }
