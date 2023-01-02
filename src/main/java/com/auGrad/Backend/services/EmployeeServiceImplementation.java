@@ -5,7 +5,6 @@ import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.repository.BatchRepo;
 import com.auGrad.Backend.repository.EmployeeRepo;
 import com.auGrad.Backend.repository.FeedbackRepo;
-import com.auGrad.Backend.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +32,18 @@ public class EmployeeServiceImplementation implements EmployeeService {
     public List<Employee> getEmployees(){
 
         return this.employeeRepo.findAll();
+    }
+
+    @Override
+    public List<Employee> getEmployeesByBatchId(int batchId){
+
+        return this.employeeRepo.findAllByBatchId(batchId);
+    }
+
+    @Override
+    public Integer getEmployeesCountByBatchId(int batchId){
+
+        return this.employeeRepo.getCountByBatchId(batchId);
     }
 
 }
