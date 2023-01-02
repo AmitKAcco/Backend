@@ -11,4 +11,6 @@ public interface TrainerAssignedService {
 
 
     List<TrainerAssigned> getTrainerAssigned();
+
+    List<TrainerAssigned> getTrainerAssignedByBatchId(int batchId);
 }

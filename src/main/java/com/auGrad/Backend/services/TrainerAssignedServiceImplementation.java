@@ -1,13 +1,10 @@
 package com.auGrad.Backend.services;
 
-import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.model.TrainerAssigned;
 import com.auGrad.Backend.model.TrainingCurriculum;
-import com.auGrad.Backend.repository.EmployeeRepo;
 import com.auGrad.Backend.repository.TrainerAssignedRepo;
 import com.auGrad.Backend.repository.TrainingCurriculumRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,5 +41,11 @@ public class TrainerAssignedServiceImplementation implements TrainerAssignedServ
     public List<TrainerAssigned> getTrainerAssigned(){
 
         return this.trainerAssignedRepo.findAll();
+    }
+
+    @Override
+    public List<TrainerAssigned> getTrainerAssignedByBatchId(int batchId){
+
+        return this.trainerAssignedRepo.findByBatchId(batchId);
     }
 }

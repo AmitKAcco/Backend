@@ -28,4 +28,10 @@ public class RequirementsServiceImplementation implements RequirementsService{
 
         return this.requirementsRepo.findAll();
     }
+
+    @Override
+    public List<Requirements> getRequirementsByBatchId(int batchId){
+
+        return this.requirementsRepo.findByBatchId(batchId);
+    }
 }

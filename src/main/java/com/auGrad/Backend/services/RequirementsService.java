@@ -11,4 +11,6 @@ public interface RequirementsService {
     Requirements createRequirements(Requirements requirements);
 
     List<Requirements> getRequirements();
+
+    List<Requirements> getRequirementsByBatchId(int batchId);
 }
