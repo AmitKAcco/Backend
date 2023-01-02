@@ -1,6 +1,5 @@
 package com.auGrad.Backend.services;
 
-import com.auGrad.Backend.model.ProjectTopics;
 import com.auGrad.Backend.model.TrainingCalendar;
 import com.auGrad.Backend.model.TrainingCurriculum;
 import com.auGrad.Backend.repository.TrainingCalendarRepo;
@@ -44,5 +43,11 @@ public class TrainingCalendarServiceImplementation implements TrainingCalendarSe
     public List<TrainingCalendar> getTrainingCalendar(){
 
         return this.trainingCalendarRepo.findAll();
+    }
+
+    @Override
+    public List<TrainingCalendar> getTrainingCalendarTopicByBatchId(int batchId){
+
+        return this.trainingCalendarRepo.findByBatchId(batchId);
     }
 }

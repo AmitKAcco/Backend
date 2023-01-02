@@ -1,8 +1,6 @@
 package com.auGrad.Backend.services;
 
-import com.auGrad.Backend.model.Batch;
 import com.auGrad.Backend.model.TrainingCurriculum;
-import com.auGrad.Backend.repository.BatchRepo;
 import com.auGrad.Backend.repository.TrainingCurriculumRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +30,12 @@ public class TrainingCurriculumServiceImplementation implements TrainingCurricul
         return this.trainingCurriculumRepo.findAll();
     }
 
+    @Override
+    public List<TrainingCurriculum> getTrainingCurriculumTopicByBatchId(int batchId){
+
+        return this.trainingCurriculumRepo.findByBatchId(batchId);
+    }
 }
+
+
 
