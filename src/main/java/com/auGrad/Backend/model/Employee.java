@@ -182,6 +182,12 @@ public class Employee {
     @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<CheckBlocked> checkBlockedList;
 
+    @ManyToMany(targetEntity = Mentors.class,cascade = CascadeType.ALL, mappedBy = "employeeIdGrad")
+    private List<Mentors> mentorsGradList;
+
+    @ManyToMany(targetEntity = Mentors.class,cascade = CascadeType.ALL, mappedBy = "employeeIdMentor")
+    private List<Mentors> mentorsList;
+
 
 }
 

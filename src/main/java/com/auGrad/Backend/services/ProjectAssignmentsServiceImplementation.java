@@ -2,7 +2,6 @@ package com.auGrad.Backend.services;
 
 import com.auGrad.Backend.model.ProjectAssignments;
 import com.auGrad.Backend.model.ProjectTopics;
-import com.auGrad.Backend.model.TrainingCurriculum;
 import com.auGrad.Backend.repository.ProjectAssignmentsRepo;
 import com.auGrad.Backend.repository.ProjectTopicRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +40,11 @@ public class ProjectAssignmentsServiceImplementation implements ProjectAssignmen
     public List<ProjectAssignments> getProjectAssignments(){
 
         return this.projectAssignmentsRepo.findAll();
+    }
+
+    @Override
+    public List<ProjectAssignments> getProjectAssignmentsByBatchId(int batchId){
+
+        return this.projectAssignmentsRepo.findByBatchId(batchId);
     }
 }

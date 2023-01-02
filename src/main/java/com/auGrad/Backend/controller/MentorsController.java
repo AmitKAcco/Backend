@@ -3,13 +3,11 @@ package com.auGrad.Backend.controller;
 import com.auGrad.Backend.exception.NoObjectFoundException;
 import com.auGrad.Backend.model.Mentors;
 
+import com.auGrad.Backend.model.MockInterview;
 import com.auGrad.Backend.services.MentorsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +30,10 @@ public class MentorsController {
     @GetMapping("/allMentors")
     private ResponseEntity<List<Mentors>> getAllMentors(){
         return ResponseEntity.ok().body(this.mentorsService.getMentors());
+    }
+    @GetMapping("/MentorsByBatchId/{batchId}")
+    private ResponseEntity<List<Mentors>> getMentorsByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.mentorsService.getMentorsByBatchId(batchId));
     }
 }

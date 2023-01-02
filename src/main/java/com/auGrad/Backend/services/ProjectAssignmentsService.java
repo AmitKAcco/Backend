@@ -8,4 +8,6 @@ public interface ProjectAssignmentsService {
     ProjectAssignments createProjectAssignments(ProjectAssignments projectAssignments);
 
     List<ProjectAssignments> getProjectAssignments();
+
+    List<ProjectAssignments> getProjectAssignmentsByBatchId(int batchId);
 }
