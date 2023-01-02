@@ -10,4 +10,10 @@ public interface EmployeeService{
     Employee createEmployee(Employee employee);
 
     List<Employee> getEmployees();
+
+    //List<Employee> getEmployeesByBatchId();
+
+    List<Employee> getEmployeesByBatchId(int batchId);
+
+    Integer getEmployeesCountByBatchId(int batchId);
 }

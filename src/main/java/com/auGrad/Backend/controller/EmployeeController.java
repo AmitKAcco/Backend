@@ -5,10 +5,7 @@ import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +30,15 @@ public class EmployeeController {
         return ResponseEntity.ok().body(this.employeeService.getEmployees());
     }
 
+    @GetMapping("/employeeByBatchId/{batchId}")
+    private ResponseEntity<List<Employee>> getEmployeeByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.employeeService.getEmployeesByBatchId(batchId));
+    }
 
+    @GetMapping("/employeeCountByBatchId/{batchId}")
+    private ResponseEntity<Integer> getEmployeeCountByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.employeeService.getEmployeesCountByBatchId(batchId));
+    }
 }

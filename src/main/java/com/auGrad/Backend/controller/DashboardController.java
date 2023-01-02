@@ -2,13 +2,11 @@ package com.auGrad.Backend.controller;
 
 import com.auGrad.Backend.exception.NoObjectFoundException;
 import com.auGrad.Backend.model.Dashboard;
+import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.services.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,11 @@ public class DashboardController {
     @GetMapping("/allDashboard")
     private ResponseEntity<List<Dashboard>> getAllDashboard(){
         return ResponseEntity.ok().body(this.dashboardService.getDashboard());
+    }
+
+    @GetMapping("/dashboardByBatchId/{batchId}")
+    private ResponseEntity<Dashboard> getDashboardByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.dashboardService.getDashboardByBatchId(batchId));
     }
 }
