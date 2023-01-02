@@ -11,4 +11,6 @@ public interface EvaluationService {
     Evaluation createEvaluation(Evaluation evaluation);
 
     List<Evaluation> getEvaluation();
+
+    Evaluation getEvaluationByBatchId(int batchId);
 }

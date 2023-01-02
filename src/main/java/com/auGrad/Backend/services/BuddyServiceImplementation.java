@@ -42,4 +42,9 @@ public class BuddyServiceImplementation implements BuddyService{
     {
         return this.buddyRepo.findAll();
     }
+
+    @Override
+    public Buddy getBuddyByBatchId(int batchId) {
+        return this.buddyRepo.findByBatchId(batchId);
+    }
 }

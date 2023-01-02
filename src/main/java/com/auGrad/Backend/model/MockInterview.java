@@ -23,6 +23,8 @@ public class MockInterview {
     private int mockId;
     @Column(name = "emp_id")
     private int empId; // Foreign Key
+    @Column(name = "emp_name")
+    private String empName;
     @Column(name = "interviewer_name")
     private String interviewerName;
     @Column(name = "interview_date")

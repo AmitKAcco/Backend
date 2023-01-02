@@ -113,4 +113,9 @@ public class CheckBlockedServiceImplementation implements CheckBlockedService{
 
         return this.checkBlockedRepo.findAll();
     }
+
+    @Override
+    public CheckBlocked getCheckedBlockedByBatchId(int batchId) {
+        return this.checkBlockedRepo.findByBatchId(batchId);
+    }
 }

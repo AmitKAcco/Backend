@@ -1,14 +1,12 @@
 package com.auGrad.Backend.controller;
 
 import com.auGrad.Backend.exception.NoObjectFoundException;
+import com.auGrad.Backend.model.Dashboard;
 import com.auGrad.Backend.model.Evaluation;
 import com.auGrad.Backend.services.EvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +27,10 @@ public class EvaluationController {
     @GetMapping("/allEvaluations")
     private ResponseEntity<List<Evaluation>> getAllEvaluation(){
         return ResponseEntity.ok().body(this.evaluationService.getEvaluation());
+    }
+    @GetMapping("/evaluationByBatchId/{batchId}")
+    private ResponseEntity<Evaluation> getEvaluationByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.evaluationService.getEvaluationByBatchId(batchId));
     }
 }

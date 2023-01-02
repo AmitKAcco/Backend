@@ -68,7 +68,7 @@ public class InterviewServiceImplementation implements InterviewService{
             Job j = jobobj.get();
             //interviewAdded.setGradName(j.getClient());
             obj.setClient(j.getClient());
-            
+
 
         }
         blockedRepo.save(obj);
@@ -91,5 +91,10 @@ public class InterviewServiceImplementation implements InterviewService{
     @Override
     public List<Interview> getInterview() {
         return this.interviewRepo.findAll();
+    }
+
+    @Override
+    public Interview getInterviewByBatchId(int batchId) {
+        return this.interviewRepo.findByBatchId(batchId);
     }
 }

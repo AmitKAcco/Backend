@@ -17,7 +17,6 @@ public class EmployeeController {
     @PostMapping("/addEmployee")
     private ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
         try {
-
             return ResponseEntity.ok().body(this.employeeService.createEmployee(employee));
         }
         catch (Exception e){

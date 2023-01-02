@@ -12,4 +12,6 @@ public interface InterviewService {
     Interview createInterview(Interview interview);
 
     List<Interview> getInterview();
+
+    Interview getInterviewByBatchId(int batchId);
 }
