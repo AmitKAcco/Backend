@@ -8,4 +8,6 @@ public interface MentorsService {
     Mentors createMentor(Mentors mentors);
 
     List<Mentors> getMentors();
+
+    List<Mentors> getMentorsByBatchId(int batchId);
 }

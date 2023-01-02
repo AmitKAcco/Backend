@@ -8,4 +8,6 @@ public interface ProjectTopicsService {
     ProjectTopics createProjectTopics(ProjectTopics projectTopics);
 
     List<ProjectTopics> getProjectTopics();
+
+    List<ProjectTopics> getProjectTopicsByBatchId(int batchId);
 }

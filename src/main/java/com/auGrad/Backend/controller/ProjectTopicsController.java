@@ -3,14 +3,12 @@ package com.auGrad.Backend.controller;
 import com.auGrad.Backend.exception.NoObjectFoundException;
 import com.auGrad.Backend.model.Mentors;
 import com.auGrad.Backend.model.ProjectTopics;
+import com.auGrad.Backend.model.Requirements;
 import com.auGrad.Backend.services.MentorsService;
 import com.auGrad.Backend.services.ProjectTopicsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +30,11 @@ public class ProjectTopicsController {
     @GetMapping("/allProjectTopics")
     private ResponseEntity<List<ProjectTopics>> getAllProjectTopics(){
         return ResponseEntity.ok().body(this.projectTopicsService.getProjectTopics());
+    }
+
+    @GetMapping("/projectTopicsByBatchId/{batchId}")
+    private ResponseEntity<List<ProjectTopics>> getProjectTopicsByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.projectTopicsService.getProjectTopicsByBatchId(batchId));
     }
 }

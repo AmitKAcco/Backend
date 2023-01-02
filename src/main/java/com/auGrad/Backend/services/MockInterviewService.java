@@ -12,4 +12,6 @@ public interface MockInterviewService {
     MockInterview createMockInterview(MockInterview mockInterview);
 
     List<MockInterview> getMockInterview();
+
+    List<MockInterview> getMockInterviewByBatchId(int batchId);
 }

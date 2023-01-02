@@ -36,4 +36,10 @@ public class MockInterviewServiceImplementation implements MockInterviewService 
     public List<MockInterview> getMockInterview() {
         return this.mockInterviewRepo.findAll();
     }
+
+    @Override
+    public List<MockInterview> getMockInterviewByBatchId(int batchId){
+
+        return this.mockInterviewRepo.findByBatchId(batchId);
+    }
 }

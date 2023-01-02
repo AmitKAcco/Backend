@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ProjectAssignmentsRepo extends JpaRepository<ProjectAssignments,Integer> {
-
+    List<ProjectAssignments> findByBatchId(int batchId);
 }

@@ -14,6 +14,8 @@ public interface TrainingCurriculumRepo extends JpaRepository<TrainingCurriculum
 
     @Query("Select i from TrainingCurriculum i where i.topicName=?1")
     Optional<TrainingCurriculum> findByName(String topicName);
+
+    List<TrainingCurriculum> findByBatchId(int batchId);
     //  Optional<TrainingCurriculum> findbyName(String topicName);
     // Optional<TrainingCurriculum> findIdbyName(String topicName);
 }

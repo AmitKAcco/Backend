@@ -1,7 +1,6 @@
 package com.auGrad.Backend.services;
 
 import com.auGrad.Backend.model.ProjectAssignments;
-import org.apache.catalina.User;
 
 import java.util.List;
 
@@ -10,6 +9,5 @@ public interface ProjectAssignmentsService {
 
     List<ProjectAssignments> getProjectAssignments();
 
-    List<ProjectAssignments> saveAll(List<ProjectAssignments> projectAssignmentsList);
-
+    List<ProjectAssignments> getProjectAssignmentsByBatchId(int batchId);
 }

@@ -8,4 +8,6 @@ public interface TrainingCalendarService {
     TrainingCalendar createTrainingCalendar(TrainingCalendar trainingCalendar);
 
     List<TrainingCalendar> getTrainingCalendar();
+
+    List<TrainingCalendar> getTrainingCalendarTopicByBatchId(int batchId);
 }

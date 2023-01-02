@@ -47,4 +47,10 @@ public class MentorsServiceImplementation implements MentorsService{
 
         return this.mentorsRepo.findAll();
     }
+
+    @Override
+    public List<Mentors> getMentorsByBatchId(int batchId){
+
+        return this.mentorsRepo.findByBatchId(batchId);
+    }
 }

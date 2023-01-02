@@ -1,5 +1,6 @@
 package com.auGrad.Backend.services;
 
+import com.auGrad.Backend.model.CheckBlocked;
 import com.auGrad.Backend.model.ProjectTopics;
 import com.auGrad.Backend.repository.ProjectTopicRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,12 @@ public class ProjectTopicsServiceImplementation implements ProjectTopicsService{
     private ProjectTopics projectTopicsAdded;
     @Override
     public ProjectTopics createProjectTopics(ProjectTopics projectTopics){
-        ProjectTopics projectTopicsAdded=  projectTopicRepo.save(projectTopics);
+        ProjectTopics projectTopics1 = new ProjectTopics();
+        projectTopics1.setBatchId(projectTopics.getBatchId());
+        projectTopics1.setProjectName(projectTopics.getProjectName());
 
+        //ProjectTopics projectTopicsAdded=  projectTopicRepo.save(projectTopics);
+        projectTopicRepo.save(projectTopics1);
         return projectTopicsAdded;
 
     }
@@ -26,5 +31,11 @@ public class ProjectTopicsServiceImplementation implements ProjectTopicsService{
     public List<ProjectTopics> getProjectTopics(){
 
         return this.projectTopicRepo.findAll();
+    }
+
+    @Override
+    public List<ProjectTopics> getProjectTopicsByBatchId(int batchId){
+
+        return this.projectTopicRepo.findByBatchId(batchId);
     }
 }

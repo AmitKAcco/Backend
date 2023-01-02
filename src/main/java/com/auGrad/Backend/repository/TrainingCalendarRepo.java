@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface TrainingCalendarRepo extends JpaRepository<TrainingCalendar,Integer> {
     Object findTopicByTopicId(String trainingTopicName);
+
+    List<TrainingCalendar> findByBatchId(int batchId);
 //    Object findByTopicName(String trainingTopicName);
 //    @Query("Select i from Inventory i where i.bookName=?1")
 //    List<> findInventoryByBookName(String bookName);
