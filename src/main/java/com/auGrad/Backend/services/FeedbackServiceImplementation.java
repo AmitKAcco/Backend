@@ -34,4 +34,9 @@ public class FeedbackServiceImplementation implements FeedbackService{
     public List<Feedback> getFeedback() {
         return this.feedbackRepo.findAll();
     }
+
+    @Override
+    public Feedback getFeedbackByBatchId(int batchId) {
+        return this.feedbackRepo.findByBatchId(batchId);
+    }
 }

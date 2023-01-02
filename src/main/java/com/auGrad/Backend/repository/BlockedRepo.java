@@ -2,6 +2,7 @@ package com.auGrad.Backend.repository;
 
 
 import com.auGrad.Backend.model.Blocked;
+import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.model.TrainingCurriculum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -20,4 +21,8 @@ public interface BlockedRepo extends JpaRepository<Blocked,Integer> {
     List<Integer> findBlockedIdByEmpId(int empId);
 
 
+    @Query("Select b  from Blocked b where b.batchId=?1")
+    List<Employee> findAllByBatchId(int batchId);
+
+    Blocked findByBatchId(int batchId);
 }

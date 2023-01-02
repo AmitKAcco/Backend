@@ -1,10 +1,12 @@
 package com.auGrad.Backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -45,6 +47,7 @@ public class ProjectAssignments {
     @Column(name = "project_name")
     private String projectName;
 
+
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
@@ -55,13 +58,10 @@ public class ProjectAssignments {
 
     private List<Employee> employeeList;
 
-
     @ManyToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id", referencedColumnName = "project_id")
 
     private List<ProjectTopics> projectList;
-
-
 
 
 }

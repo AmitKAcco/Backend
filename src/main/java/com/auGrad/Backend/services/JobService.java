@@ -8,4 +8,6 @@ public interface JobService {
     Job createJob(Job job);
 
     List<Job> getJob();
+
+    Job getJobByBatchId(int batchId);
 }

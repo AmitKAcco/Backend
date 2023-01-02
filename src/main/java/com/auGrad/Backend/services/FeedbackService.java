@@ -12,4 +12,5 @@ public interface FeedbackService {
 
     List<Feedback> getFeedback();
 
+    Feedback getFeedbackByBatchId(int batchId);
 }

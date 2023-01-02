@@ -72,9 +72,4 @@ public class TrainerAssigned {
 
     private List<TrainingCurriculum> topicList;
 
-
-
-
-
-
 }

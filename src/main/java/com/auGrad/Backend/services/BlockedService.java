@@ -12,4 +12,6 @@ public interface BlockedService {
     Blocked createBlocked(Blocked blocked);
 
     List<Blocked> getBlocked();
+
+    Blocked getBlockedByBatchId(int batchId);
 }

@@ -45,4 +45,9 @@ public class BlockedServiceImplementation implements BlockedService{
     public List<Blocked> getBlocked() {
         return this.blockedRepo.findAll();
     }
+
+    @Override
+    public Blocked getBlockedByBatchId(int batchId) {
+        return this.blockedRepo.findByBatchId(batchId);
+    }
 }
