@@ -64,4 +64,9 @@ public class ProjectAssignments {
     private List<ProjectTopics> projectList;
 
 
+    @ManyToMany(targetEntity = ProjectCalendar.class,cascade = CascadeType.ALL, mappedBy = "teamNumberList")
+    private List<ProjectCalendar> projectCalendarList;
+
+
+
 }

@@ -26,6 +26,19 @@ public class ProjectCalendar {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "teamNumber")
+    private String teamNumber;
+
+    @Column(name = "project_Progress")
+    private String projectProgress;
+
+    @Column(name = "project_name")
+    private String projectName;
+
+
+
+
+
 //    @Column(name = "approve")
 //    private boolean approve;
 
@@ -36,6 +49,14 @@ public class ProjectCalendar {
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
+    @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "teamNumber", referencedColumnName = "teamNumber")
 
+    private List<ProjectAssignments> teamNumberList;
+
+    @ManyToMany(targetEntity = ProjectTopics.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_name", referencedColumnName = "project_name")
+
+    private List<ProjectTopics> projectTopicsList;
 
 }

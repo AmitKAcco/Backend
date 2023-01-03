@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,9 @@ public class Interview {
     private String gradName;
     @Column(name = "job_id")
     private int jobId; // Foreign Key
+
+    @Column(name = "interview_date")
+    private Date interviewDate;
     @Column(name = "time")
     private Time time;
     @Column(name = "block_status")
