@@ -30,7 +30,7 @@ public class MockInterview {
     @Column(name = "interview_date")
     private Date interviewDate;
     @Column(name = "time")
-    private Time time;
+    private String time;
     @Column(name = "batch_id")
     private int batchId;  // Foreign Key
 
