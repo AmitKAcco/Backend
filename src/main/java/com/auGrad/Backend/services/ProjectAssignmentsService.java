@@ -10,4 +10,6 @@ public interface ProjectAssignmentsService {
     List<ProjectAssignments> getProjectAssignments();
 
     List<ProjectAssignments> getProjectAssignmentsByBatchId(int batchId);
+
+    //List<ProjectAssignments> saveAll(List<ProjectAssignments> projectAssignmentsList);
 }

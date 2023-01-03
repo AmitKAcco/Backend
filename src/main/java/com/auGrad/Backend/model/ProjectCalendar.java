@@ -26,14 +26,14 @@ public class ProjectCalendar {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "approve")
-    private boolean approve;
+//    @Column(name = "approve")
+//    private boolean approve;
 
     @Column(name = "batch_id")
     private int batchId; // Foreign Key
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
 
