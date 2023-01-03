@@ -27,10 +27,10 @@ public class ProjectAssignmentsController {
             throw new NoObjectFoundException("Project Assignments already exists");
         }
     }
-@PostMapping("/listProjectAssignments")
-public List<ProjectAssignments> createProjectAssignmentList(@RequestBody List<ProjectAssignments> projectAssignmentsList) {
-    return projectAssignmentsService.saveAll(projectAssignmentsList);
-}
+//@PostMapping("/listProjectAssignments")
+//public List<ProjectAssignments> createProjectAssignmentList(@RequestBody List<ProjectAssignments> projectAssignmentsList) {
+//    return projectAssignmentsService.saveAll(projectAssignmentsList);
+//}
 
     @GetMapping("/allProjectAssignments")
     private ResponseEntity<List<ProjectAssignments>> getAllProjectAssignments(){
