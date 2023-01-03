@@ -35,6 +35,10 @@ public class ProjectTopics {
 
     private List<ProjectAssignments> projectAssignmentsList;
 
+    @ManyToMany(targetEntity = ProjectCalendar.class,cascade = CascadeType.ALL, mappedBy = "projectTopicsList")
+    private List<ProjectCalendar> projectCalendarList;
+
+
 
 
 }
