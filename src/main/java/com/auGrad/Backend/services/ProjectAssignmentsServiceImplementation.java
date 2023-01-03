@@ -42,4 +42,14 @@ public class ProjectAssignmentsServiceImplementation implements ProjectAssignmen
 
         return this.projectAssignmentsRepo.findAll();
     }
+
+    @Override
+    public List<ProjectAssignments> getProjectAssignmentsByBatchId(int batchId) {
+        return null;
+    }
+
+    @Override
+    public List<ProjectAssignments> saveAll(List<ProjectAssignments> projectAssignmentsList) {
+        return null;
+    }
 }

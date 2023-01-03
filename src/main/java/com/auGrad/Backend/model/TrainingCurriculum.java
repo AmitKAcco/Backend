@@ -28,6 +28,9 @@ public class TrainingCurriculum {
     @Column(name="batch_id")
     private int batchId;
 
+    @Column(name = "approve")
+    private boolean approve;
+
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
