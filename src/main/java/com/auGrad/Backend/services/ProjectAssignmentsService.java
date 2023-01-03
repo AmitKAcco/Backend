@@ -11,5 +11,5 @@ public interface ProjectAssignmentsService {
 
     List<ProjectAssignments> getProjectAssignmentsByBatchId(int batchId);
 
-    List<ProjectAssignments> saveAll(List<ProjectAssignments> projectAssignmentsList);
+    //List<ProjectAssignments> saveAll(List<ProjectAssignments> projectAssignmentsList);
 }
