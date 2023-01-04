@@ -25,6 +25,9 @@ public class Requirements {
     @Column(name = "batch_id")
     private int batchId; // Foreign Key
 
+    @Column(name="job_id")
+    private int jobId;
+
     @Column(name = "no_of_positions")
     private int noOfPositions;
 
@@ -39,6 +42,12 @@ public class Requirements {
 
     @Column(name = "gender")
     private String gender;
+
+    @Column(name="client")
+    private String client;
+
+    @Column(name = "vertical")
+    private String vertical;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
