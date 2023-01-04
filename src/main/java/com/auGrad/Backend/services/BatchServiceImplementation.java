@@ -13,7 +13,7 @@ public class BatchServiceImplementation implements BatchService {
     @Autowired
     private BatchRepo batchrepo;
     public Batch createBatch(Batch batch){
-       Batch batchAdded =  batchrepo.save(batch);
+       Batch batchAdded =  this.batchrepo.save(batch);
        return batchAdded;
 
     }
