@@ -25,6 +25,8 @@ public class InterviewServiceImplementation implements InterviewService{
 
     @Autowired
     private JobRepo jobRepo;
+    @Autowired
+    private Job job;
 
 
 
@@ -63,10 +65,11 @@ public class InterviewServiceImplementation implements InterviewService{
             obj.setEmpName(e.getEmployeeName());
 
         }
-        Optional<Job> jobobj = jobRepo.findById(interview.getEmpId());
+        Optional<Job> jobobj = jobRepo.findById(interview.getJobId());
         if(jobobj.isPresent()){
             Job j = jobobj.get();
             //interviewAdded.setGradName(j.getClient());
+
             obj.setClient(j.getClient());
 
 
