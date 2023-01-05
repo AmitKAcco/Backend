@@ -3,15 +3,16 @@ package com.auGrad.Backend.services;
 import com.auGrad.Backend.model.Blocked;
 import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.model.Job;
+import com.auGrad.Backend.model.Selected;
 import com.auGrad.Backend.repository.BlockedRepo;
 import com.auGrad.Backend.repository.EmployeeRepo;
 import com.auGrad.Backend.repository.JobRepo;
+import com.auGrad.Backend.repository.SelectedRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Transactional
@@ -23,6 +24,9 @@ public class BlockedServiceImplementation implements BlockedService{
     private EmployeeRepo employeeRepo;
     @Autowired
     private JobRepo jobRepo;
+
+    @Autowired
+    private SelectedRepo selectedRepo;
 
     @Override
     public Blocked createBlocked(Blocked blocked) {
@@ -68,4 +72,17 @@ public class BlockedServiceImplementation implements BlockedService{
         return this.blockedRepo.findByBatchId(batchId);
     }
 
+    @Override
+    public List<Integer> getEligibleGrads(Blocked checkEligibility){
+
+        List<Integer> employees = this.employeeRepo.findAllEmpIdByBatchId(checkEligibility.getBatchId());
+        List<Integer> blockedEmployees = this.blockedRepo.findEmpIdByJobId(checkEligibility.getJobId());
+        List<Integer> selectedEmployees = this.selectedRepo.findAllEmpId();
+
+        employees.removeAll(blockedEmployees);
+        employees.removeAll(selectedEmployees);
+
+        return employees;
+
+    }
 }
