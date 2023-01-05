@@ -1,6 +1,7 @@
 package com.auGrad.Backend.controller;
 
 import com.auGrad.Backend.exception.NoObjectFoundException;
+import com.auGrad.Backend.model.Blocked;
 import com.auGrad.Backend.model.Dashboard;
 import com.auGrad.Backend.model.Interview;
 import com.auGrad.Backend.services.InterviewService;
@@ -36,4 +37,10 @@ public class InterviewController {
     {
         return ResponseEntity.ok().body(this.interviewService.getInterviewByBatchId(batchId));
     }
+
+    @PostMapping("/aa")
+    private  ResponseEntity<List<Integer>> aa(@RequestBody Blocked checkInterviewScheduled){
+        return ResponseEntity.ok().body(this.interviewService.getEmpScheduledInterview(checkInterviewScheduled));
+    }
+
 }

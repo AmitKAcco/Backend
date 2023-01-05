@@ -115,6 +115,9 @@ public class InterviewServiceImplementation implements InterviewService{
 ////        return this.interviewRepo.findAll();
 //        return
 //    }
-
+@Override
+public List<Integer> getEmpScheduledInterview(Blocked checkInterviewScheduled) {
+        return this.interviewRepo.findEmpIdIfInterviewScheduled(checkInterviewScheduled.getJobId());
+}
 
 }
