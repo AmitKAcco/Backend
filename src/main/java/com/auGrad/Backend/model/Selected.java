@@ -11,31 +11,24 @@ import java.util.List;
 @Component
 @Getter
 @Setter
-@SequenceGenerator(name="seq2", initialValue=1000,allocationSize = 1)
-@Table(name="blocked")
-public class Blocked {
+@SequenceGenerator(name="seq15", initialValue=900,allocationSize = 1)
+@Table(name="selected")
+public class Selected {
     //PK
     @Id
-    @Column(name="blocked_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq2")
-    private int blockedId;
-    //FK
+    @Column(name="selected_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="seq15")
+    private int selectedId;
 
+    //FK
     @Column(name="batch_id")
     private int batchId;
 
-    //FK
     @Column(name="emp_id")
     private int empId;
 
-    @Column(name="emp_name")
-    private String empName;
-    //FK
-    @Column(name="job_id")
+    @Column(name = "job_id")
     private int jobId;
-
-    @Column(name="client")
-    private String client;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
@@ -51,10 +44,6 @@ public class Blocked {
     @JoinColumn(name = "job_id", referencedColumnName = "job_id")
 
     private List<Job> jobList;
-
-    @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL,mappedBy = "blockedList")
-    private List<Interview> interviewList;
-
 
 
 }
