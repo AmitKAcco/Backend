@@ -23,6 +23,9 @@ public class Evaluation {
 
     @Column(name = "batch_id")
     private int batchId; // foreign Key
+
+    @Column(name = "batchName")
+    private String batchName;
     @Column(name = "emp_id")
     private int empId; // foreign Key
 

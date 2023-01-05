@@ -27,6 +27,8 @@ public class TrainingCurriculum {
     //FK
     @Column(name="batch_id")
     private int batchId;
+    @Column(name = "batchName")
+    private String batchName;
 
     @Column(name = "approve")
     private boolean approve;

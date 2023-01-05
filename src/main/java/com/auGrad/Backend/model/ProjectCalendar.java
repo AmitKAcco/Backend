@@ -44,6 +44,8 @@ public class ProjectCalendar {
 
     @Column(name = "batch_id")
     private int batchId; // Foreign Key
+    @Column(name = "batchName")
+    private String batchName;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")

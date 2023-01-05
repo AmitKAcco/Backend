@@ -21,6 +21,8 @@ public class Dashboard {
     private int dashboardId;
     @Column(name = "batch_id")
     private int batchId; //Foreign key
+    @Column(name = "batchName")
+    private String batchName;
     @Column(name = "no_of_grads_placed")
     private int noOfGradsPlaced;
     @Column(name = "remaining_interviews")

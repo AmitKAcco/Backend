@@ -22,6 +22,8 @@ public class Feedback {
     //FK
     @Column(name="batch_id")
     private int batchId;
+    @Column(name = "batchName")
+    private String batchName;
 
     //FK
     @Column(name="emp_id")
