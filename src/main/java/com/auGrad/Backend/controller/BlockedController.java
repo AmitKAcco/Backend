@@ -46,9 +46,4 @@ public class BlockedController {
         this.blockedService.updateBlockedForInterviewScheduledfunc(interviewScheduled);
     }
 
-    @PutMapping("/selectedForJob")
-    private void updateBlockedForSelected(@RequestBody() Blocked selectedForJob){
-         this.blockedService.updateBlockedForSelectedfunc(selectedForJob);
-    }
-
 }

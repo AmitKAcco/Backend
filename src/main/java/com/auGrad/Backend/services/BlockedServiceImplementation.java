@@ -43,7 +43,6 @@ public class BlockedServiceImplementation implements BlockedService{
         }
         blockedRepo.save(blockedAdded);
 
-        blockedRepo.save(blockedAdded);
         return blockedAdded;
     }
 
@@ -52,15 +51,6 @@ public class BlockedServiceImplementation implements BlockedService{
 
         blockedRepo.updateBlockedForInterviewScheduled(updateBlocked.getEmpId(),updateBlocked.getJobId());
     }
-
-    @Override
-    public void updateBlockedForSelectedfunc(Blocked updateBlocked){
-
-        blockedRepo.updateBlockedForSelected(updateBlocked.getEmpId(),updateBlocked.getJobId());
-
-    }
-
-
 
     @Override
     public List<Blocked> getBlocked() {

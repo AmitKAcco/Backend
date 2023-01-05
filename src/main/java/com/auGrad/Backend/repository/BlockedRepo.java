@@ -36,10 +36,6 @@ public interface BlockedRepo extends JpaRepository<Blocked,Integer> {
     @Query("update Blocked b set b.interviewScheduled = true where b.empId =?1 and jobId =?2")
     void updateBlockedForInterviewScheduled(int empId, int jobId);
 
-    @Modifying()
-    @Query("update Blocked b set b.selected = true where b.empId =?1 and jobId =?2")
-    void updateBlockedForSelected(int empId, int jobId);
-
 //    @Query("Select b from Blocked b where b.empId =?1 and b.jobId =?2")
 //    List<Employee> checkEligibility(int jobId);
 

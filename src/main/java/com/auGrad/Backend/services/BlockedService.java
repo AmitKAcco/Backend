@@ -15,8 +15,6 @@ public interface BlockedService {
 
     void updateBlockedForInterviewScheduledfunc(Blocked updateBlocked);
 
-    void updateBlockedForSelectedfunc(Blocked updateBlocked);
-
     List<Blocked> getBlocked();
 
     Blocked getBlockedByBatchId(int batchId);
