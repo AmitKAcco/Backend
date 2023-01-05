@@ -1,5 +1,6 @@
 package com.auGrad.Backend.services;
 
+import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.model.Interview;
 import org.springframework.stereotype.Service;
 
@@ -14,4 +15,6 @@ public interface InterviewService {
     List<Interview> getInterview();
 
     Interview getInterviewByBatchId(int batchId);
+
+//    List<Employee> getEligibleForInterview(int jobId, int batchId);
 }
