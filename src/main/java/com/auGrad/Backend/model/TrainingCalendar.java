@@ -24,6 +24,8 @@ public class TrainingCalendar {
     //FK
     @Column(name="batch_id")
     private int batchId;
+    @Column(name = "batchName")
+    private String batchName;
 
     //FK
     @Column(name="topic_id")

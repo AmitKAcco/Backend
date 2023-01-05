@@ -32,7 +32,9 @@ public class MockInterview {
     @Column(name = "time")
     private String time;
     @Column(name = "batch_id")
-    private int batchId;  // Foreign Key
+    private int batchId;
+    @Column(name = "batchName")
+    private String batchName;// Foreign Key
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)

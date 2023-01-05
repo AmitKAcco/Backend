@@ -24,7 +24,8 @@ public class Requirements {
 
     @Column(name = "batch_id")
     private int batchId; // Foreign Key
-
+    @Column(name = "batchName")
+    private String batchName;
     @Column(name="job_id")
     private int jobId;
 

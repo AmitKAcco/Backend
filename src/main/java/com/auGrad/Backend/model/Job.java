@@ -24,6 +24,9 @@ public class Job {
     @Column(name="batch_id")
     private int batchId;
 
+    @Column(name = "batchName")
+    private String batchName;
+
 
     @Column(name="blocked_id")
     private int blockedId;
