@@ -179,11 +179,15 @@ public class Employee {
 
 @ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<Interview> interviewList;
+
     @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
     private List<CheckBlocked> checkBlockedList;
 
 //    @ManyToMany(targetEntity = Mentors.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
 //    private List<TrainerAssigned> trainerAssignedList;
+
+    @ManyToMany(targetEntity = Selected.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+    private List<Selected> selectedListList;
 
 }
 

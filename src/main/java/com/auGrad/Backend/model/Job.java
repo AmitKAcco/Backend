@@ -42,13 +42,13 @@ public class Job {
     private int requirement_id;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
 
 
     @ManyToMany(targetEntity = Requirements.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "requirement_id", referencedColumnName = "requirement_id", insertable = false, updatable = false)
+    @JoinColumn(name = "requirement_id", referencedColumnName = "requirement_id")
 
     private List<Requirements> requirementsList;
 
@@ -59,6 +59,9 @@ public class Job {
 
     @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL, mappedBy = "jobList")
     private List<Interview> interviewList;
+
+    @ManyToMany(targetEntity = Selected.class,cascade = CascadeType.ALL, mappedBy = "jobList")
+    private List<Selected> selectedListList;
 
 
 }
