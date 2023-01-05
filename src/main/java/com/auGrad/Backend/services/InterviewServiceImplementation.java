@@ -1,13 +1,7 @@
 package com.auGrad.Backend.services;
 
-import com.auGrad.Backend.model.Blocked;
-import com.auGrad.Backend.model.Employee;
-import com.auGrad.Backend.model.Interview;
-import com.auGrad.Backend.model.Job;
-import com.auGrad.Backend.repository.BlockedRepo;
-import com.auGrad.Backend.repository.EmployeeRepo;
-import com.auGrad.Backend.repository.InterviewRepo;
-import com.auGrad.Backend.repository.JobRepo;
+import com.auGrad.Backend.model.*;
+import com.auGrad.Backend.repository.*;
 import com.sun.tools.jconsole.JConsoleContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.Block;
@@ -40,6 +34,12 @@ public class InterviewServiceImplementation implements InterviewService{
     private Blocked b1;
 
     @Autowired
+    private CheckBlocked checkBlocked;
+
+    @Autowired
+    private CheckBlockedRepo checkBlockedRepo;
+
+    @Autowired
     private Interview interviewAdded;
     @Override
     public Interview createInterview(Interview interview) {
@@ -56,6 +56,12 @@ public class InterviewServiceImplementation implements InterviewService{
         obj.setJobId(interview.getJobId());
         obj.setEmpId(interview.getEmpId());
 
+        CheckBlocked obj1 = new CheckBlocked();
+        System.out.println(interview.getJobId() + " " + interview.getEmpId());
+        obj1.setBatchId(interview.getBatchId());
+        obj1.setJobId(interview.getJobId());
+        obj1.setEmpId(interview.getEmpId());
+
 
 
         Optional<Employee> employeeobj1 = employeeRepo.findById(interview.getEmpId());
@@ -63,6 +69,7 @@ public class InterviewServiceImplementation implements InterviewService{
             Employee e=employeeobj1.get();
             interviewAdded.setGradName(e.getEmployeeName());
             obj.setEmpName(e.getEmployeeName());
+            obj1.setEmpName(e.getEmployeeName());
 
         }
         Optional<Job> jobobj = jobRepo.findById(interview.getJobId());
@@ -71,10 +78,13 @@ public class InterviewServiceImplementation implements InterviewService{
             //interviewAdded.setGradName(j.getClient());
 
             obj.setClient(j.getClient());
+            obj1.setClient(j.getClient());
 
 
         }
+        obj1.setBlockStatus(true);
         blockedRepo.save(obj);
+        checkBlockedRepo.save(obj1);
 
         interviewRepo.save(interviewAdded);
 

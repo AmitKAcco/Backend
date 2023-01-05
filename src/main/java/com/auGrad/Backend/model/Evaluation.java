@@ -32,6 +32,8 @@ public class Evaluation {
     @Column(name = "topic_id")
     private int topicId; // foreign Key
 
+    @Column(name = "topic_name")
+    private String topicName;
     @Column(name = "date")
     private Date date;
 
