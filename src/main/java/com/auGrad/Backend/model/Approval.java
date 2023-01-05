@@ -19,6 +19,9 @@ public class Approval {
     private int ApprovalId;
     @Column(name = "batchId")
     private int batchId;
+
+    @Column(name = "batchName")
+    private String batchName;
     @Column(name = "techCalendar")
     private boolean techCalendar;
     @Column(name = "techCurriculum")

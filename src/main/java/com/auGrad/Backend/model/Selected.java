@@ -23,6 +23,8 @@ public class Selected {
     //FK
     @Column(name="batch_id")
     private int batchId;
+    @Column(name = "batchName")
+    private String batchName;
 
     @Column(name="emp_id")
     private int empId;

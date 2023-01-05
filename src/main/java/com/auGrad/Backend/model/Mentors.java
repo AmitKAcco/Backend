@@ -23,6 +23,9 @@ public class Mentors {
     @Column(name="batch_id")
     private int batchId;
 
+    @Column(name = "batchName")
+    private String batchName;
+
     //FK
     @Column(name="emp_id_grad")
     private int empIdGrad;

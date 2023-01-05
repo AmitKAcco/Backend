@@ -28,6 +28,8 @@ public class ProjectAssignments {
 
     @Column(name = "batch_id")
     private int batchId; //Foreign Key
+    @Column(name = "batchName")
+    private String batchName;
 
     @Column(name = "teamNumber")
     private int teamNumber;

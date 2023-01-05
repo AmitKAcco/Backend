@@ -22,6 +22,8 @@ public class Interview {
     private int interviewId;
     @Column(name = "batch_id")
     private int batchId; // Foreign key
+    @Column(name = "batchName")
+    private String batchName;
     @Column(name = "emp_id")
     private int empId; //Foreign Key
     @Column(name = "grad_name")
