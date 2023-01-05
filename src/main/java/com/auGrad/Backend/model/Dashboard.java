@@ -29,7 +29,7 @@ public class Dashboard {
     private int totalGrads;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 
     private List<Batch> batchesList;
 
