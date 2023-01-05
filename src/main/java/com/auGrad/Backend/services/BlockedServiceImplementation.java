@@ -9,10 +9,12 @@ import com.auGrad.Backend.repository.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class BlockedServiceImplementation implements BlockedService{
 
     @Autowired
@@ -42,6 +44,21 @@ public class BlockedServiceImplementation implements BlockedService{
     }
 
     @Override
+    public void updateBlockedForInterviewScheduledfunc(Blocked updateBlocked){
+
+        blockedRepo.updateBlockedForInterviewScheduled(updateBlocked.getEmpId(),updateBlocked.getJobId());
+    }
+
+    @Override
+    public void updateBlockedForSelectedfunc(Blocked updateBlocked){
+
+        blockedRepo.updateBlockedForSelected(updateBlocked.getEmpId(),updateBlocked.getJobId());
+
+    }
+
+
+
+    @Override
     public List<Blocked> getBlocked() {
         return this.blockedRepo.findAll();
     }
@@ -50,4 +67,5 @@ public class BlockedServiceImplementation implements BlockedService{
     public Blocked getBlockedByBatchId(int batchId) {
         return this.blockedRepo.findByBatchId(batchId);
     }
+
 }

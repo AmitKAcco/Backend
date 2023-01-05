@@ -34,4 +34,15 @@ public class BlockedController {
     {
         return ResponseEntity.ok().body(this.blockedService.getBlockedByBatchId(batchId));
     }
+
+    @PutMapping("/interviewScheduled")
+    private void updateBlockedForInterviewScheduled(@RequestBody() Blocked interviewScheduled){
+        this.blockedService.updateBlockedForInterviewScheduledfunc(interviewScheduled);
+    }
+
+    @PutMapping("/selectedForJob")
+    private void updateBlockedForSelected(@RequestBody() Blocked selectedForJob){
+         this.blockedService.updateBlockedForSelectedfunc(selectedForJob);
+    }
+
 }

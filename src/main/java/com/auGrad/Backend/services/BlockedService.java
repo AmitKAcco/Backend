@@ -5,13 +5,19 @@ import com.auGrad.Backend.model.Blocked;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface BlockedService {
 
 
     Blocked createBlocked(Blocked blocked);
 
+
+    void updateBlockedForInterviewScheduledfunc(Blocked updateBlocked);
+
+    void updateBlockedForSelectedfunc(Blocked updateBlocked);
+
     List<Blocked> getBlocked();
 
     Blocked getBlockedByBatchId(int batchId);
+
 }
