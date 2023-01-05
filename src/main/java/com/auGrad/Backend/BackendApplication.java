@@ -24,18 +24,18 @@ public class BackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}
-	@Configuration
-	public static class WebConfig
-	{
-		@Bean
-		public WebMvcConfigurer corsConfigurer()
-		{
-			return new WebMvcConfigurer() {
-				@Override
-				public void addCorsMappings(CorsRegistry registry) {
-					registry.addMapping("/**").allowedOrigins("http://localhost:4200");
-				}
-			};
-		}
-	}
+//	@Configuration
+//	public static class WebConfig
+//	{
+//		@Bean
+//		public WebMvcConfigurer corsConfigurer()
+//		{
+//			return new WebMvcConfigurer() {
+//				@Override
+//				public void addCorsMappings(CorsRegistry registry) {
+//					registry.addMapping("/**").allowedOrigins("http://localhost:4200");
+//				}
+//			};
+//		}
+//	}
 }

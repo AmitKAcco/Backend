@@ -16,4 +16,9 @@ public interface InterviewRepo extends JpaRepository<Interview,Integer> {
     List<Employee> findAllByBatchId(int batchId);
 
     Interview findByBatchId(int batchId);
+
+
+
+
+
 }

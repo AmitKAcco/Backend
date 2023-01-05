@@ -19,17 +19,16 @@ public class InterviewServiceImplementation implements InterviewService{
 
     @Autowired
     private JobRepo jobRepo;
+
     @Autowired
     private Job job;
-
-
-
 
     @Autowired
     private EmployeeRepo employeeRepo;
 
     @Autowired
     private Blocked b;
+
     @Autowired
     private Blocked b1;
 
@@ -110,4 +109,12 @@ public class InterviewServiceImplementation implements InterviewService{
     public Interview getInterviewByBatchId(int batchId) {
         return this.interviewRepo.findByBatchId(batchId);
     }
+
+//    @Override
+//    public List<Employee> getEligibleForInterview() {
+////        return this.interviewRepo.findAll();
+//        return
+//    }
+
+
 }

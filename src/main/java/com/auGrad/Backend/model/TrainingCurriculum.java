@@ -30,8 +30,8 @@ public class TrainingCurriculum {
     @Column(name = "batchName")
     private String batchName;
 
-    @Column(name = "approve")
-    private boolean approve;
+//    @Column(name = "approve")
+//    private boolean approve;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
