@@ -16,4 +16,5 @@ public interface EmployeeService{
     List<Employee> getEmployeesByBatchId(int batchId);
 
     Integer getEmployeesCountByBatchId(int batchId);
+//    List<Employee> getEmployessByBatchName(String batchName);
 }

@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Approval {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
-    @Column(name = "Approval_Id", unique = true)
+    @Column(name = "Approval_Id")
     private int ApprovalId;
     @Column(name = "batchId")
     private int batchId;
@@ -23,7 +23,7 @@ public class Approval {
     @Column(name = "batchName")
     private String batchName;
     @Column(name = "techCalendar")
-    private boolean techCalendar;
+    private Integer techCalendar;
     @Column(name = "techCurriculum")
-    private boolean techCurriculum;
+    private Integer techCurriculum;
 }

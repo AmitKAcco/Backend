@@ -18,6 +18,8 @@ public interface EmployeeRepo extends JpaRepository<Employee,Integer> {
 
     @Query("Select count(batchId) from Employee e where e.batchId=?1")
     Integer getCountByBatchId(int batchId);
+
+
     // String findNameById(int empIdGrad);
     //String findNameById(int empIdMentor);
     //String findNameByIdGrad(int empIdGrad);

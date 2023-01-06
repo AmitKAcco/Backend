@@ -38,6 +38,11 @@ public class SelectedController {
     {
         return ResponseEntity.ok().body(this.selectedService.isGradSelected(empId));
     }
+    @GetMapping("/selectedCountByBatchId/{batchId}")
+    private ResponseEntity<Integer> getEmployeeCountByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.selectedService.getEmployeesCountByBatchId(batchId));
+    }
 
 
 }

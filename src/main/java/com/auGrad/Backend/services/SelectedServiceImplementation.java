@@ -28,4 +28,9 @@ public class SelectedServiceImplementation implements SelectedService{
         return gradAdded;
     }
 
+    @Override
+    public Integer getEmployeesCountByBatchId(int batchId) {
+        return this.selectedRepo.getCountByBatchId(batchId);
+    }
+
 }

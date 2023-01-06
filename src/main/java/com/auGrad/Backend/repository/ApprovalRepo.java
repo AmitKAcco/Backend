@@ -10,8 +10,9 @@ import java.util.Optional;
 
 @Repository
 public interface ApprovalRepo extends JpaRepository<Approval,Integer> {
+    Optional<Approval> findByBatchName(String batchName);
 
     Approval findByBatchId(Integer batchId);
-
+//    Approval findbyBatchName(String BatchName);
 //    Approval findByBatchId(int id);
 }
