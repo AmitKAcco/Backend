@@ -25,11 +25,9 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 	@Configuration
-	public static class WebConfig
-	{
+	public static class WebConfig {
 		@Bean
-		public WebMvcConfigurer corsConfigurer()
-		{
+		public WebMvcConfigurer corsConfigurer() {
 			return new WebMvcConfigurer() {
 				@Override
 				public void addCorsMappings(CorsRegistry registry) {
@@ -37,5 +35,6 @@ public class BackendApplication {
 				}
 			};
 		}
+
 	}
 }

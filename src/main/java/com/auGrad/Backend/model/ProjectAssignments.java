@@ -34,11 +34,16 @@ public class ProjectAssignments {
     @Column(name = "teamNumber")
     private int teamNumber;
 
-    @Column(name = "emp_id")
-    private List<Integer> empId; // Foreign Key
+//    @Column(name = "emp_id")
+//    private List<Integer> empId; // Foreign Key
+//
+//    @Column(name = "emp_name_list")
+//    private List<String> empNameList; // Foreign Key
 
-    @Column(name = "emp_name_list")
-    private List<String> empNameList; // Foreign Key
+    @Column(name = "emp_id")
+    private int empId; // Foreign Key
+
+
 
 
 

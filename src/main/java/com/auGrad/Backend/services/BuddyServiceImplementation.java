@@ -30,6 +30,8 @@ public class BuddyServiceImplementation implements BuddyService{
         if(employeeObj2.isPresent()){
             Employee e = employeeObj2.get();
             buddyAdded.setGradName(e.getEmployeeName());
+            buddyAdded.setBatchId(e.getBatchId());
+            buddyAdded.setBatchName(e.getBatchName());
         }
 
         buddyRepo.save(buddyAdded);
