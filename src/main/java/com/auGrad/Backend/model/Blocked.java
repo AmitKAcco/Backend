@@ -39,6 +39,9 @@ public class Blocked {
     @Column(name="client")
     private String client;
 
+    @Column(name="interview_scheduled")
+    private boolean interviewScheduled;
+
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 

@@ -1,6 +1,9 @@
 package com.auGrad.Backend.services;
 
+import com.auGrad.Backend.model.Blocked;
+import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.model.Interview;
+import org.springframework.cglib.core.Block;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -14,4 +17,6 @@ public interface InterviewService {
     List<Interview> getInterview();
 
     Interview getInterviewByBatchId(int batchId);
+
+    List<Integer> getEmpScheduledInterview(Blocked checkInterviewScheduled);
 }

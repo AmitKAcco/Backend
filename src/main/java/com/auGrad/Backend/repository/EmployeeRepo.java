@@ -13,6 +13,9 @@ public interface EmployeeRepo extends JpaRepository<Employee,Integer> {
     @Query("Select e  from Employee e where e.batchId=?1")
     List<Employee> findAllByBatchId(int batchId);
 
+    @Query("Select e.empId  from Employee e where e.batchId=?1")
+    List<Integer> findAllEmpIdByBatchId(int batchId);
+
     @Query("Select count(batchId) from Employee e where e.batchId=?1")
     Integer getCountByBatchId(int batchId);
     // String findNameById(int empIdGrad);
