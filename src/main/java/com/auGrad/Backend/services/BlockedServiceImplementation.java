@@ -1,13 +1,7 @@
 package com.auGrad.Backend.services;
 
-import com.auGrad.Backend.model.Blocked;
-import com.auGrad.Backend.model.Employee;
-import com.auGrad.Backend.model.Job;
-import com.auGrad.Backend.model.Selected;
-import com.auGrad.Backend.repository.BlockedRepo;
-import com.auGrad.Backend.repository.EmployeeRepo;
-import com.auGrad.Backend.repository.JobRepo;
-import com.auGrad.Backend.repository.SelectedRepo;
+import com.auGrad.Backend.model.*;
+import com.auGrad.Backend.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,10 +22,24 @@ public class BlockedServiceImplementation implements BlockedService{
     @Autowired
     private SelectedRepo selectedRepo;
 
+    @Autowired
+    private Batch batch;
+
+    @Autowired
+    private BatchRepo batchRepo;
+
     @Override
     public Blocked createBlocked(Blocked blocked) {
         Blocked blockedAdded = blockedRepo.save(blocked);
         Optional<Employee> employeeObj = employeeRepo.findById(blocked.getEmpId());
+        Optional<Batch> obj = batchRepo.findByBatchName(blocked.getBatchName());
+//   Optional<Batch> objBatch = batchRepo.findById(mockInterview.getBatchId());
+
+        if(obj.isPresent()) {
+            Batch b = obj.get();
+            blockedAdded.setBatchId(b.getBatchId());
+        }
+        blockedRepo.save(blockedAdded);
         if(employeeObj.isPresent()){
             Employee e = employeeObj.get();
             blockedAdded.setEmpName(e.getEmployeeName());
