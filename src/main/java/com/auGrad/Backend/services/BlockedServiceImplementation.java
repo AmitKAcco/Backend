@@ -1,9 +1,6 @@
 package com.auGrad.Backend.services;
 
-import com.auGrad.Backend.model.Blocked;
-import com.auGrad.Backend.model.Employee;
-import com.auGrad.Backend.model.Job;
-import com.auGrad.Backend.model.Selected;
+import com.auGrad.Backend.model.*;
 import com.auGrad.Backend.repository.BlockedRepo;
 import com.auGrad.Backend.repository.EmployeeRepo;
 import com.auGrad.Backend.repository.JobRepo;
@@ -47,9 +44,11 @@ public class BlockedServiceImplementation implements BlockedService{
     }
 
     @Override
-    public void updateBlockedForInterviewScheduledfunc(Blocked updateBlocked){
+    public int updateBlockedForInterviewScheduledFunc(Blocked updateBlocked){
+    Blocked blocked = blockedRepo.getBlocked(updateBlocked.getEmpId(),updateBlocked.getJobId());
+    blockedRepo.updateBlockedForInterviewScheduled(updateBlocked.getEmpId(),updateBlocked.getJobId(),!blocked.getInterviewScheduled());
+    return 200;
 
-        blockedRepo.updateBlockedForInterviewScheduled(updateBlocked.getEmpId(),updateBlocked.getJobId());
     }
 
     @Override

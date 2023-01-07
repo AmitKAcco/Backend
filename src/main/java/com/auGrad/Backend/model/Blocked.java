@@ -61,5 +61,7 @@ public class Blocked {
     private List<Interview> interviewList;
 
 
-
+    public boolean getInterviewScheduled() {
+        return interviewScheduled;
+    }
 }
