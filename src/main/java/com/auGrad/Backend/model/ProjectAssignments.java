@@ -34,6 +34,8 @@ public class ProjectAssignments {
     @Column(name = "teamNumber")
     private int teamNumber;
 
+    @Column(name = "allotedEmp")
+    private String allotedEmp;
 //    @Column(name = "emp_id")
 //    private List<Integer> empId; // Foreign Key
 //
