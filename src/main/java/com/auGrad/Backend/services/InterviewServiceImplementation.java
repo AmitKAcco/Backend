@@ -40,9 +40,30 @@ public class InterviewServiceImplementation implements InterviewService{
 
     @Autowired
     private Interview interviewAdded;
+
+    @Autowired
+    private Batch batch;
+
+    @Autowired
+    private BatchRepo batchRepo;
     @Override
     public Interview createInterview(Interview interview) {
         Interview interviewAdded = interviewRepo.save(interview);
+
+        Optional<Employee> obj2 = employeeRepo.findById(interview.getEmpId());
+        //   Optional<Batch> objBatch = batchRepo.findById(mockInterview.getBatchId());
+        Optional<Batch> obj3 = batchRepo.findByBatchName(interview.getBatchName());
+
+        if(obj2.isPresent()){
+            Employee e = obj2.get();
+            interviewAdded.setGradName(e.getEmployeeName());
+           // interviewAdded.setBatchId(e.getBatchN());
+        }
+        if(obj3.isPresent()){
+            Batch b = obj3.get();
+            interviewAdded.setBatchId(b.getBatchId());
+            // interviewAdded.setBatchId(e.getBatchN());
+        }
 
 //        Interview i = new Interview();
 
