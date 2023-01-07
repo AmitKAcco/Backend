@@ -37,4 +37,9 @@ public class RequirementsController {
     {
         return ResponseEntity.ok().body(this.requirementsService.getRequirementsByBatchId(batchId));
     }
+    @GetMapping("/RequirementsCountByBatchId/{batchId}")
+    private ResponseEntity<Integer> getEmployeeCountByBatchId(@PathVariable int batchId)
+    {
+        return ResponseEntity.ok().body(this.requirementsService.getCountbyBatchId(batchId));
+    }
 }

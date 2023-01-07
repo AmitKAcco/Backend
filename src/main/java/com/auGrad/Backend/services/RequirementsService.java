@@ -13,4 +13,6 @@ public interface RequirementsService {
     List<Requirements> getRequirements();
 
     List<Requirements> getRequirementsByBatchId(int batchId);
+
+    Integer getCountbyBatchId(int batchId);
 }
