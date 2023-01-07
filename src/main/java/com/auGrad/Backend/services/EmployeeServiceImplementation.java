@@ -46,4 +46,9 @@ public class EmployeeServiceImplementation implements EmployeeService {
         return this.employeeRepo.getCountByBatchId(batchId);
     }
 
+//    @Override
+//    public List<Employee> getEmployessByBatchName(String batchName) {
+//        return this.employeeRepo.getByBatchName(batchName);
+//    }
+
 }

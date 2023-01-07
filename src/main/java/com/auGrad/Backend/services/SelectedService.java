@@ -13,4 +13,5 @@ public interface SelectedService {
 
     Selected addSelectedGrad(Selected gradSelected);
 
+    Integer getEmployeesCountByBatchId(int batchId);
 }

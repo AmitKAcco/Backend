@@ -40,4 +40,10 @@ public class EmployeeController {
     {
         return ResponseEntity.ok().body(this.employeeService.getEmployeesCountByBatchId(batchId));
     }
+
+//    @GetMapping("/employeeCountByBatchName/{batchName}")
+//    private ResponseEntity<Integer> getEmployeeCountByBatchName(@PathVariable String batchName)
+//    {
+//        return (ResponseEntity<Integer>) ResponseEntity.ok().body(this.employeeService.getEmployessByBatchName(batchName));
+//    }
 }

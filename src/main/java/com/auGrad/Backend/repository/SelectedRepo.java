@@ -12,5 +12,7 @@ public interface SelectedRepo extends JpaRepository<Selected,Integer> {
 
     @Query("Select s.empId from Selected s")
     List<Integer> findAllEmpId();
+    @Query("Select count(batchId) from   Selected s where s.batchId=?1")
+    Integer getCountByBatchId(int batchId);
 
 }
