@@ -13,7 +13,7 @@ public interface BlockedService {
     Blocked createBlocked(Blocked blocked);
 
 
-    void updateBlockedForInterviewScheduledfunc(Blocked updateBlocked);
+    int updateBlockedForInterviewScheduledFunc(Blocked updateBlocked);
 
     List<Blocked> getBlocked();
 

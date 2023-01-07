@@ -5,13 +5,16 @@ import com.auGrad.Backend.model.Blocked;
 import com.auGrad.Backend.model.Dashboard;
 import com.auGrad.Backend.model.Employee;
 import com.auGrad.Backend.services.BlockedService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
+//@CrossOrigin("http://localhost:4200")
 public class BlockedController {
 
     @Autowired
@@ -41,9 +44,10 @@ public class BlockedController {
         return ResponseEntity.ok().body(this.blockedService.getBlockedByBatchId(batchId));
     }
 
-    @PutMapping("/interviewScheduled")
-    private void updateBlockedForInterviewScheduled(@RequestBody() Blocked interviewScheduled){
-        this.blockedService.updateBlockedForInterviewScheduledfunc(interviewScheduled);
+    @PostMapping("/interviewScheduled")
+    private ResponseEntity<Integer> updateBlockedForInterviewScheduled(@RequestBody() Blocked interviewScheduled){
+        log.debug("inside update Blocked For Interview Scheduled ");
+        return ResponseEntity.ok().body(this.blockedService.updateBlockedForInterviewScheduledFunc(interviewScheduled));
     }
 
 }
