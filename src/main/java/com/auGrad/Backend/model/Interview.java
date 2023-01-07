@@ -34,7 +34,7 @@ public class Interview {
     @Column(name = "interview_date")
     private Date interviewDate;
     @Column(name = "time")
-    private Time time;
+    private String time;
     @Column(name = "block_status")
     private boolean block_status;
 

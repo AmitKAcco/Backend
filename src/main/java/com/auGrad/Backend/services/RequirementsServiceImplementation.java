@@ -56,4 +56,9 @@ public class RequirementsServiceImplementation implements RequirementsService{
 
         return this.requirementsRepo.findByBatchId(batchId);
     }
+
+    @Override
+    public Integer getCountbyBatchId(int batchId) {
+        return this.requirementsRepo.getCountByBatchId(batchId);
+    }
 }
