@@ -31,6 +31,8 @@ public class MockInterview {
     private Date interviewDate;
     @Column(name = "time")
     private String time;
+    @Column(name = "score")
+    private int score;
     @Column(name = "batch_id")
     private int batchId;
     @Column(name = "batchName")
