@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.Block;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class InterviewServiceImplementation implements InterviewService{
     @Autowired
     private InterviewRepo interviewRepo;
@@ -119,5 +121,14 @@ public class InterviewServiceImplementation implements InterviewService{
 public List<Integer> getEmpScheduledInterview(Blocked checkInterviewScheduled) {
         return this.interviewRepo.findEmpIdIfInterviewScheduled(checkInterviewScheduled.getJobId());
 }
+
+    @Override
+    public int updateInterviewForSelectedFunc(Interview empData){
+        Interview interviewDetails = interviewRepo.findByEmpIdAndJobId(empData.getEmpId(),empData.getJobId());
+        System.out.println("fff");
+        System.out.println(interviewDetails.getEmpId());
+        interviewRepo.updateInterviewForSelected(interviewDetails.getEmpId(),interviewDetails.getJobId(),!interviewDetails.getSelected());
+        return 200;
+    }
 
 }

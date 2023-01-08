@@ -43,4 +43,10 @@ public class InterviewController {
         return ResponseEntity.ok().body(this.interviewService.getEmpScheduledInterview(checkInterviewScheduled));
     }
 
+    @PostMapping("/gradSelected")
+    private ResponseEntity<Integer> updateInterviewForSelected(@RequestBody() Interview interviewDetails){
+//        log.debug("inside update interview For Interview selected ");
+        return ResponseEntity.ok().body(this.interviewService.updateInterviewForSelectedFunc(interviewDetails));
+    }
+
 }
