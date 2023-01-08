@@ -28,18 +28,20 @@ public class ProjectTopicsServiceImplementation implements ProjectTopicsService{
         ProjectTopics projectTopics1 = new ProjectTopics();
         //projectTopics1.setBatchId(projectTopics.getBatchId());
         projectTopics1.setProjectName(projectTopics.getProjectName());
+        projectTopics1.setBatchName(projectTopics.getBatchName());
         Optional<Batch> obj3 = batchRepo.findByBatchName(projectTopics.getBatchName());
 
 
         if(obj3.isPresent()){
             Batch b = obj3.get();
             projectTopics1.setBatchId(b.getBatchId());
+            projectTopics.setBatchId(b.getBatchId());
             // interviewAdded.setBatchId(e.getBatchN());
         }
 
         //ProjectTopics projectTopicsAdded=  projectTopicRepo.save(projectTopics);
         projectTopicRepo.save(projectTopics1);
-        return projectTopicsAdded;
+        return projectTopics1;
 
     }
 
