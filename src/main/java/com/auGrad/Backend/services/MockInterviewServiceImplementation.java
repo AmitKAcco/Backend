@@ -34,6 +34,7 @@ public class MockInterviewServiceImplementation implements MockInterviewService 
             Employee e = obj.get();
             mockInterviewAdded.setEmpName(e.getEmployeeName());
             mockInterviewAdded.setBatchName(e.getBatchName());
+            mockInterviewAdded.setBatchId(e.getBatchId());
         }
 //        if(objBatch.isPresent()){
 //            Batch b = objBatch.get();
