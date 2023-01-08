@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImplementation implements EmployeeService {
@@ -25,6 +26,15 @@ public class EmployeeServiceImplementation implements EmployeeService {
     @Override
     public Employee createEmployee(Employee employee){
         Employee employeeAdded = employeeRepo.save(employee);
+        Optional<Batch> obj3 = batchRepo.findByBatchName(employee.getBatchName());
+
+
+        if(obj3.isPresent()){
+            Batch b = obj3.get();
+            employeeAdded.setBatchId(b.getBatchId());
+            // interviewAdded.setBatchId(e.getBatchN());
+        }
+        employeeRepo.save(employeeAdded);
 
         return employeeAdded;
     }
