@@ -33,4 +33,10 @@ public class FeedbackController {
     {
         return ResponseEntity.ok().body(this.feedbackService.getFeedbackByBatchId(batchId));
     }
+
+    @GetMapping("/feedbackByEmpId/{empId}")
+    private ResponseEntity<List<Feedback>> getFeedbackByEmpID(@PathVariable int empId)
+    {
+        return ResponseEntity.ok().body(this.feedbackService.getFeedbackByEmpId(empId));
+    }
 }

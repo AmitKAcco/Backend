@@ -37,4 +37,7 @@ public class EvaluationServiceImplementation implements EvaluationService{
     public Evaluation getEvaluationByBatchId(int batchId) {
         return this.evaluationRepo.findByBatchId(batchId);
     }
+
+
+
 }
