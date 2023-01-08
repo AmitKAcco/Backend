@@ -33,10 +33,15 @@ public class Interview {
 
     @Column(name = "interview_date")
     private Date interviewDate;
+
     @Column(name = "time")
     private String time;
+
     @Column(name = "block_status")
     private boolean block_status;
+
+    @Column(name = "selected")
+    private boolean selected;
 
     @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
@@ -58,5 +63,9 @@ public class Interview {
     @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
 
     private List<Blocked> blockedList;
+
+    public boolean getSelected(){
+        return selected;
+    }
 
 }

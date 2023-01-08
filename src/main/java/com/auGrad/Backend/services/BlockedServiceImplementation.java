@@ -48,7 +48,6 @@ public class BlockedServiceImplementation implements BlockedService{
     Blocked blocked = blockedRepo.getBlocked(updateBlocked.getEmpId(),updateBlocked.getJobId());
     blockedRepo.updateBlockedForInterviewScheduled(updateBlocked.getEmpId(),updateBlocked.getJobId(),!blocked.getInterviewScheduled());
     return 200;
-
     }
 
     @Override
