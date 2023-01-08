@@ -19,4 +19,6 @@ public interface InterviewService {
     Interview getInterviewByBatchId(int batchId);
 
     List<Integer> getEmpScheduledInterview(Blocked checkInterviewScheduled);
+
+    int updateInterviewForSelectedFunc(Interview empData);
 }
