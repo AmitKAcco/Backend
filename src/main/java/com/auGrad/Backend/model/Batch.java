@@ -12,11 +12,11 @@ import java.util.List;
 @Getter
 @Component
 @Table(name = "batch")
-@SequenceGenerator(name="seq", initialValue=6000 ,allocationSize = 1)
+@SequenceGenerator(name="seqbatch", initialValue=5000 ,allocationSize = 1)
 public class Batch {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seqbatch")
     @Column(name = "batch_id")
     private int batchId;
     @Column(name = "batchName")
