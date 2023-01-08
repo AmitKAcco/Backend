@@ -1,10 +1,7 @@
 package com.auGrad.Backend.services;
 
 import com.auGrad.Backend.model.*;
-import com.auGrad.Backend.repository.BlockedRepo;
-import com.auGrad.Backend.repository.EmployeeRepo;
-import com.auGrad.Backend.repository.JobRepo;
-import com.auGrad.Backend.repository.SelectedRepo;
+import com.auGrad.Backend.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +22,11 @@ public class BlockedServiceImplementation implements BlockedService{
     @Autowired
     private SelectedRepo selectedRepo;
 
+    @Autowired
+    private Batch batch;
+    @Autowired
+    private BatchRepo batchRepo;
+
     @Override
     public Blocked createBlocked(Blocked blocked) {
         Blocked blockedAdded = blockedRepo.save(blocked);
@@ -37,6 +39,14 @@ public class BlockedServiceImplementation implements BlockedService{
         if(jobObj.isPresent()){
             Job j = jobObj.get();
             blockedAdded.setClient(j.getClient());
+        }
+        Optional<Batch> obj3 = batchRepo.findByBatchName(blocked.getBatchName());
+
+
+        if(obj3.isPresent()){
+            Batch b = obj3.get();
+            blockedAdded.setBatchId(b.getBatchId());
+            // interviewAdded.setBatchId(e.getBatchN());
         }
         blockedRepo.save(blockedAdded);
 
