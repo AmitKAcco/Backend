@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Component
 @Getter
 @Setter
+
 @Table(name="Login")
 public class Login {
     @Id
@@ -27,7 +28,7 @@ public class Login {
     @Column(name="roles")
     private String role;
 
-    @Column(name="userName")
+    @Column(name="userName" , unique = true)
     private  String userName;
 
     @Column(name = "password")
