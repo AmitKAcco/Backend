@@ -38,8 +38,8 @@ public class InterviewController {
         return ResponseEntity.ok().body(this.interviewService.getInterviewByBatchId(batchId));
     }
 
-    @PostMapping("/aa")
-    private  ResponseEntity<List<Integer>> aa(@RequestBody Blocked checkInterviewScheduled){
+    @PostMapping("/getInterviewScheduledGrads")
+    private  ResponseEntity<List<Integer>> getInterviewScheduledGrads(@RequestBody Blocked checkInterviewScheduled){
         return ResponseEntity.ok().body(this.interviewService.getEmpScheduledInterview(checkInterviewScheduled));
     }
 

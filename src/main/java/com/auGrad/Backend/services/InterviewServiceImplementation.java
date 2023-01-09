@@ -140,7 +140,10 @@ public class InterviewServiceImplementation implements InterviewService{
 //    }
 @Override
 public List<Integer> getEmpScheduledInterview(Blocked checkInterviewScheduled) {
-        return this.interviewRepo.findEmpIdIfInterviewScheduled(checkInterviewScheduled.getJobId());
+       List<Integer> interviewScheduled = this.interviewRepo.findEmpIdIfInterviewScheduled(checkInterviewScheduled.getJobId());
+       List<Integer> alreadyScheduled = this.interviewRepo.findAllEmpIdByJobId(checkInterviewScheduled.getJobId());
+       interviewScheduled.removeAll(alreadyScheduled);
+       return interviewScheduled;
 }
 
     @Override

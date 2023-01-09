@@ -29,6 +29,9 @@ public interface InterviewRepo extends JpaRepository<Interview,Integer> {
 
     Interview findByEmpIdAndJobId(int empId, int jobId);
 
+    @Query("Select i.empId from Interview i where i.jobId =?1")
+    List<Integer> findAllEmpIdByJobId(int jobId);
+
 
 
 
