@@ -1,10 +1,8 @@
 package com.auGrad.Backend.services;
 
 
-import com.auGrad.Backend.model.Employee;
-import com.auGrad.Backend.model.Job;
-import com.auGrad.Backend.model.Mentors;
-import com.auGrad.Backend.model.Requirements;
+import com.auGrad.Backend.model.*;
+import com.auGrad.Backend.repository.BatchRepo;
 import com.auGrad.Backend.repository.JobRepo;
 import com.auGrad.Backend.repository.RequirementsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +24,11 @@ public class RequirementsServiceImplementation implements RequirementsService{
 
     @Autowired
     private JobRepo jobRepo;
+
+    @Autowired
+    private Batch batch;
+    @Autowired
+    private BatchRepo batchRepo;
     @Override
     public Requirements createRequirements(Requirements requirements){
         Requirements requirementsAdded=  requirementsRepo.save(requirements);
@@ -39,6 +42,15 @@ public class RequirementsServiceImplementation implements RequirementsService{
             requirementsAdded.setVertical(j.getVertical());
 
 
+        }
+        Optional<Batch> obj3 = batchRepo.findByBatchName(job.getBatchName());
+
+
+        if(obj3.isPresent()){
+            Batch b = obj3.get();
+            requirementsAdded.setBatchId(b.getBatchId());
+
+            // interviewAdded.setBatchId(e.getBatchN());
         }
         requirementsRepo.save(requirementsAdded);
         return requirementsAdded;
