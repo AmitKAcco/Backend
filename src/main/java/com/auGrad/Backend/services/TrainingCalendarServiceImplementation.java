@@ -1,7 +1,9 @@
 package com.auGrad.Backend.services;
 
+import com.auGrad.Backend.model.Batch;
 import com.auGrad.Backend.model.TrainingCalendar;
 import com.auGrad.Backend.model.TrainingCurriculum;
+import com.auGrad.Backend.repository.BatchRepo;
 import com.auGrad.Backend.repository.TrainingCalendarRepo;
 import com.auGrad.Backend.repository.TrainingCurriculumRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class TrainingCalendarServiceImplementation implements TrainingCalendarSe
     private TrainingCurriculumRepo trainingCurriculumRepo;
 
     @Autowired
+    private BatchRepo batchRepo;
+    @Autowired
     private TrainingCalendar trainingCalendarAdded;
 
     @Autowired
@@ -33,6 +37,14 @@ public class TrainingCalendarServiceImplementation implements TrainingCalendarSe
         if(trainingCurriculum1.isPresent()){
             TrainingCurriculum tc=trainingCurriculum1.get();
             trainingCalendarAdded.setTopicId(tc.getTopicId());
+        }
+        Optional<Batch> obj3 = batchRepo.findByBatchName(trainingCalendar.getBatchName());
+
+
+        if(obj3.isPresent()){
+            Batch b = obj3.get();
+            trainingCalendarAdded.setBatchId(b.getBatchId());
+            // interviewAdded.setBatchId(e.getBatchN());
         }
         trainingCalendarRepo.save(trainingCalendarAdded);
         return trainingCalendarAdded;
