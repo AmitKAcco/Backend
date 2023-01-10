@@ -17,7 +17,7 @@ public class ProjectTopicsController {
     @Autowired
     private ProjectTopicsService projectTopicsService;
     @PostMapping("/addProjectTopics")
-    private ResponseEntity<ProjectTopics> saveProjectTopics(@RequestBody ProjectTopics projectTopics){
+    private ResponseEntity<String> saveProjectTopics(@RequestBody ProjectTopics projectTopics){
         try {
 
             return ResponseEntity.ok().body(this.projectTopicsService.createProjectTopics(projectTopics));

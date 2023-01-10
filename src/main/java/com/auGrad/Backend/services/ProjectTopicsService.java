@@ -5,7 +5,7 @@ import com.auGrad.Backend.model.ProjectTopics;
 import java.util.List;
 
 public interface ProjectTopicsService {
-    ProjectTopics createProjectTopics(ProjectTopics projectTopics);
+    String createProjectTopics(ProjectTopics projectTopics);
 
     List<ProjectTopics> getProjectTopics();
 
