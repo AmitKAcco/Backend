@@ -38,14 +38,14 @@ public class Buddy {
     @Column(name="buddy_name")
     private String buddyName;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
-
-    private List<Employee> employeeList;
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id", insertable = false, updatable = false)
+//
+//    private List<Employee> employeeList;
 
 }

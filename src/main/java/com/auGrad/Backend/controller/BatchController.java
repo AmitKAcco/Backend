@@ -14,17 +14,26 @@ public class BatchController {
     @Autowired
     private BatchService batchService;
 
-    @PostMapping("/addBatch")
-    private ResponseEntity<Batch> saveBatch(@RequestBody Batch batch){
-        try {
+//    @PostMapping("/addBatch")
+//    private ResponseEntity<Batch> saveBatch(@RequestBody Batch batch){
+//        try {
+//
+//            return ResponseEntity.ok().body(this.batchService.createBatch(batch));
+//        }
+//        catch (Exception e){
+//            throw new NoObjectFoundException("Batch already exists");
+//        }
+//    }
+@PostMapping("/addBatch")
+private ResponseEntity<Boolean> saveBatch(@RequestBody Batch batch){
+    try {
 
-            return ResponseEntity.ok().body(this.batchService.createBatch(batch));
-        }
-        catch (Exception e){
-            throw new NoObjectFoundException("Batch already exists");
-        }
+        return ResponseEntity.ok().body(this.batchService.createBatch(batch));
     }
-
+    catch (Exception e){
+        throw new NoObjectFoundException("Batch already exists");
+    }
+}
     @GetMapping("/allBatches")
     private ResponseEntity<List<Batch>> getAllEmployees(){
         return ResponseEntity.ok().body(this.batchService.getBatches());

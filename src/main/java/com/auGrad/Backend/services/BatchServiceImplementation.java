@@ -13,11 +13,29 @@ import java.util.Optional;
 @Service
 @Transactional
 public class BatchServiceImplementation implements BatchService {
-    @Autowired
-    private BatchRepo batchRepo;
-    public Batch createBatch(Batch batch){
-       Batch batchAdded =  this.batchRepo.save(batch);
-       return batchAdded;
+ 
+
+//     private BatchRepo batchRepo;
+//     public Batch createBatch(Batch batch){
+//        Batch batchAdded =  this.batchRepo.save(batch);
+//        return batchAdded;
+      @Autowired
+      private BatchRepo batchrepo;
+    public Boolean createBatch(Batch batch){
+        Optional<Batch> obj = this.batchrepo.findByBatchName(batch.getBatchName());
+
+        if(obj.isPresent())
+        {
+            return (true);
+        }
+
+
+        Batch batchAdded =  this.batchrepo.save(batch);
+
+
+       //return batchAdded;
+        return (false);
+
 
     }
 

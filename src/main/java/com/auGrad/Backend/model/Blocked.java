@@ -41,24 +41,24 @@ public class Blocked {
 
     @Column(name="interview_scheduled")
     private boolean interviewScheduled;
-
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
-
-    private List<Employee> employeeList;
-
-    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
-
-    private List<Job> jobList;
-
-    @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL,mappedBy = "blockedList")
-    private List<Interview> interviewList;
+//
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+//
+//    private List<Employee> employeeList;
+//
+//    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
+//
+//    private List<Job> jobList;
+//
+//    @ManyToMany(targetEntity = Interview.class, cascade = CascadeType.ALL,mappedBy = "blockedList")
+//    private List<Interview> interviewList;
 
 
     public boolean getInterviewScheduled() {

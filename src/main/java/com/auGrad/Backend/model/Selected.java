@@ -32,20 +32,20 @@ public class Selected {
     @Column(name = "job_id")
     private int jobId;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
-
-    private List<Employee> employeeList;
-
-    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
-
-    private List<Job> jobList;
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+//
+//    private List<Employee> employeeList;
+//
+//    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "job_id", referencedColumnName = "job_id")
+//
+//    private List<Job> jobList;
 
 
 }

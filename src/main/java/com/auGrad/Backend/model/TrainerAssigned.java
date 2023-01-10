@@ -57,21 +57,21 @@ public class TrainerAssigned {
     @Column(name="training_objective")
     private String trainingObjective;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//
+//    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+//
+//    private List<Employee> employeeList;
 
-    private List<Batch> batchesList;
 
-
-    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
-
-    private List<Employee> employeeList;
-
-
-    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
-
-    private List<TrainingCurriculum> topicList;
+//    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+//
+//    private List<TrainingCurriculum> topicList;
 
 }

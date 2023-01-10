@@ -126,10 +126,10 @@ public class Employee {
     @Column(name="date_of_joining")
     private Date dateOfJoining;
 
-    @Column(name="mob_no")
+    @Column(name="mob_no" ,unique=true)
     private Long mobileNumber;
 
-    @Column(name="email")
+    @Column(name="email" ,unique=true)
     private String email;
 
     @Column(name="date_of_birth")
@@ -147,50 +147,50 @@ public class Employee {
 //    @Column(name="feedback_id")
 //    private int feedbackId;
 
-   @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-   @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
-
-   private List<Batch> batchesList;
-
-   @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeList")
-//@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
-
-
-   private List<Blocked> blockedList;
-
-
-//    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+//   @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//   @JoinColumn(name = "batch_id", referencedColumnName = "batch_id", insertable = false, updatable = false)
 //
-//    private List<Batch> blockedList;
-
-
-    @ManyToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
-
-    private List<Feedback> feedbackList;
-
-    @ManyToMany(targetEntity = TrainerAssigned.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
-    private List<TrainerAssigned> trainerAssignedList;
-
-    @ManyToMany(targetEntity = ProjectAssignments.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
-    private List<ProjectAssignments> projectAssignmentList;
-
-    @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
-    private List<MockInterview> mockInterviewList;
-
-
-@ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
-    private List<Interview> interviewList;
-
-    @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
-    private List<CheckBlocked> checkBlockedList;
-
-//    @ManyToMany(targetEntity = Mentors.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//   private List<Batch> batchesList;
+//
+//   @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL,mappedBy = "employeeList")
+////@JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+//
+//
+//   private List<Blocked> blockedList;
+//
+//
+////    @ManyTo(targetEntity = Blocked.class, cascade = CascadeType.ALL)
+////    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+////
+////    private List<Batch> blockedList;
+//
+//
+//    @ManyToMany(targetEntity = Feedback.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "feedback_id", referencedColumnName = "feedback_id", insertable = false, updatable = false)
+//
+//    private List<Feedback> feedbackList;
+//
+//    @ManyToMany(targetEntity = TrainerAssigned.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
 //    private List<TrainerAssigned> trainerAssignedList;
-
-    @ManyToMany(targetEntity = Selected.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
-    private List<Selected> selectedListList;
+//
+//    @ManyToMany(targetEntity = ProjectAssignments.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//    private List<ProjectAssignments> projectAssignmentList;
+//
+//    @ManyToMany(targetEntity = MockInterview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//    private List<MockInterview> mockInterviewList;
+//
+//
+//@ManyToMany(targetEntity = Interview.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//    private List<Interview> interviewList;
+//
+//    @ManyToMany(targetEntity = CheckBlocked.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//    private List<CheckBlocked> checkBlockedList;
+//
+////    @ManyToMany(targetEntity = Mentors.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+////    private List<TrainerAssigned> trainerAssignedList;
+//
+//    @ManyToMany(targetEntity = Selected.class,cascade = CascadeType.ALL, mappedBy = "employeeList")
+//    private List<Selected> selectedListList;
 
 }
 

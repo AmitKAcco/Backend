@@ -50,15 +50,15 @@ public class Requirements {
     @Column(name = "vertical")
     private String vertical;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL, mappedBy = "requirementsList")
-//    @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
-
-    private List<Job> jobList;
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = Job.class, cascade = CascadeType.ALL, mappedBy = "requirementsList")
+////    @JoinColumn(name = "job_id", referencedColumnName = "job_id", insertable = false, updatable = false)
+//
+//    private List<Job> jobList;
 
 
 }
