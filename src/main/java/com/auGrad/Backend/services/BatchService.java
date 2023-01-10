@@ -7,6 +7,7 @@ import java.util.List;
 public interface BatchService {
 
     Batch createBatch(Batch batch);
-
     List<Batch> getBatches();
+
+    boolean checkIfBatchAlreadyExists(String batchName);
 }
