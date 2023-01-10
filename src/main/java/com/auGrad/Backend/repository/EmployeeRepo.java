@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface EmployeeRepo extends JpaRepository<Employee,Integer> {
@@ -18,6 +19,10 @@ public interface EmployeeRepo extends JpaRepository<Employee,Integer> {
 
     @Query("Select count(batchId) from Employee e where e.batchId=?1")
     Integer getCountByBatchId(int batchId);
+
+    Optional<Employee> findByMobileNumber(Long mobileNumber);
+
+    Optional<Employee> findByEmail(String email);
 
 
     // String findNameById(int empIdGrad);
