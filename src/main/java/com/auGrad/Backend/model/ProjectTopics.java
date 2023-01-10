@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @Getter
 @Component
-@Table(name = "ProjectTopics")
+@Table(name = "ProjectTopics", uniqueConstraints = @UniqueConstraint(columnNames = {"projectName"}))
 public class ProjectTopics {
 
     @Id
@@ -19,7 +19,7 @@ public class ProjectTopics {
     @Column(name = "project_id")
     private int projectId;
 
-    @Column(name = "projectName",unique=true)
+    @Column(name = "projectName")
     private String projectName;
 
     @Column(name = "batch_id")

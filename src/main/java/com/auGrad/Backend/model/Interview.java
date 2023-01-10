@@ -59,10 +59,10 @@ public class Interview {
 //    private List<Job> jobList;
 
 
-    @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
-
-    private List<Blocked> blockedList;
+//    @ManyToMany(targetEntity = Blocked.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "blocked_id", referencedColumnName = "blocked_id", insertable = false, updatable = false)
+//
+//    private List<Blocked> blockedList;
 
     public boolean getSelected(){
         return selected;

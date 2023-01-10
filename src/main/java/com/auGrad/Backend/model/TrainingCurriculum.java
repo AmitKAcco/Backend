@@ -21,7 +21,7 @@ public class TrainingCurriculum {
     private int topicId;
 
 
-    @Column(name="topic_name" ,unique=true)
+    @Column(name="topic_name")
     private String topicName;
 
     //FK
