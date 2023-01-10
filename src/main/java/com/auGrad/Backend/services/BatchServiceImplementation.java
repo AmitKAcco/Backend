@@ -8,14 +8,15 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
 public class BatchServiceImplementation implements BatchService {
     @Autowired
-    private BatchRepo batchrepo;
+    private BatchRepo batchRepo;
     public Batch createBatch(Batch batch){
-       Batch batchAdded =  this.batchrepo.save(batch);
+       Batch batchAdded =  this.batchRepo.save(batch);
        return batchAdded;
 
     }
@@ -23,7 +24,13 @@ public class BatchServiceImplementation implements BatchService {
     @Override
     public  List<Batch> getBatches(){
 
-        return this.batchrepo.findAll();
+        return this.batchRepo.findAll();
     }
+    @Override
+    public boolean checkIfBatchAlreadyExists(String batchName){
+        Optional<Batch> findBatch = this.batchRepo.findByBatchName(batchName);
+        return findBatch.isPresent();
+    }
+
 
 }
