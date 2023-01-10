@@ -29,11 +29,11 @@ public class Dashboard {
     private int remainingInterviews;
     @Column(name = "totalGrads")
     private int totalGrads;
-
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
 
 
 

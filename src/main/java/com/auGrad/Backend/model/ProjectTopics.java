@@ -19,7 +19,7 @@ public class ProjectTopics {
     @Column(name = "project_id")
     private int projectId;
 
-    @Column(name = "projectName")
+    @Column(name = "projectName",unique=true)
     private String projectName;
 
     @Column(name = "batch_id")
@@ -27,18 +27,18 @@ public class ProjectTopics {
     @Column(name = "batchName")
     private String batchName;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL,mappedBy = "projectList")
-
-
-    private List<ProjectAssignments> projectAssignmentsList;
-
-    @ManyToMany(targetEntity = ProjectCalendar.class,cascade = CascadeType.ALL, mappedBy = "projectTopicsList")
-    private List<ProjectCalendar> projectCalendarList;
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = ProjectAssignments.class, cascade = CascadeType.ALL,mappedBy = "projectList")
+//
+//
+//    private List<ProjectAssignments> projectAssignmentsList;
+//
+//    @ManyToMany(targetEntity = ProjectCalendar.class,cascade = CascadeType.ALL, mappedBy = "projectTopicsList")
+//    private List<ProjectCalendar> projectCalendarList;
 
 
 

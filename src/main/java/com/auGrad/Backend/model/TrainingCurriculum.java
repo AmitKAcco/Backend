@@ -21,7 +21,7 @@ public class TrainingCurriculum {
     private int topicId;
 
 
-    @Column(name="topic_name")
+    @Column(name="topic_name" ,unique=true)
     private String topicName;
 
     //FK
@@ -33,25 +33,25 @@ public class TrainingCurriculum {
 //    @Column(name = "approve")
 //    private boolean approve;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-//    @ManyToOne(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL)
-//    //@JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
 //
-//    private TrainingCalendar trainingCalendarList;
-@ManyToMany(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL,mappedBy = "topicList")
-
-
-private List<TrainingCalendar> trainingCalendarList;
-
-
-    @ManyToMany(targetEntity = Evaluation.class, cascade = CascadeType.ALL,mappedBy = "topicList")
-    private List<Evaluation> evaluationList;
-
-
-    @ManyToMany(targetEntity = TrainerAssigned.class, cascade = CascadeType.ALL,mappedBy = "topicList")
-    private List<TrainerAssigned> trainerAssignedList;
+//    private List<Batch> batchesList;
+//
+////    @ManyToOne(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL)
+////    //@JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+////
+////    private TrainingCalendar trainingCalendarList;
+//@ManyToMany(targetEntity = TrainingCalendar.class, cascade = CascadeType.ALL,mappedBy = "topicList")
+//
+//
+//private List<TrainingCalendar> trainingCalendarList;
+//
+//
+//    @ManyToMany(targetEntity = Evaluation.class, cascade = CascadeType.ALL,mappedBy = "topicList")
+//    private List<Evaluation> evaluationList;
+//
+//
+//    @ManyToMany(targetEntity = TrainerAssigned.class, cascade = CascadeType.ALL,mappedBy = "topicList")
+//    private List<TrainerAssigned> trainerAssignedList;
 }

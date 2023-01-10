@@ -48,20 +48,20 @@ public class Mentors {
     @Column(name="client")
     private String client;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id_grad", referencedColumnName = "emp_id")
-
-    private List<Employee> employeeIdGrad;
-
-    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "emp_id_mentor", referencedColumnName = "emp_id")
-
-    private List<Employee> employeeIdMentor;
-
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id_grad", referencedColumnName = "emp_id")
+//
+//    private List<Employee> employeeIdGrad;
+//
+//    @ManyToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "emp_id_mentor", referencedColumnName = "emp_id")
+//
+//    private List<Employee> employeeIdMentor;
+//
 
 }

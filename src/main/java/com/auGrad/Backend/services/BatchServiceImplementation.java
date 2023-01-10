@@ -8,15 +8,27 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
 public class BatchServiceImplementation implements BatchService {
     @Autowired
     private BatchRepo batchrepo;
-    public Batch createBatch(Batch batch){
-       Batch batchAdded =  this.batchrepo.save(batch);
-       return batchAdded;
+    public Boolean createBatch(Batch batch){
+        Optional<Batch> obj = this.batchrepo.findByBatchName(batch.getBatchName());
+
+        if(obj.isPresent())
+        {
+            return (true);
+        }
+
+
+        Batch batchAdded =  this.batchrepo.save(batch);
+
+
+       //return batchAdded;
+        return (false);
 
     }
 

@@ -43,15 +43,15 @@ public class TrainingCalendar {
     @Column(name="trainingCalendar_approve")
     private boolean trainingCalendarApprove;
 
-    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-
-    private List<Batch> batchesList;
-
-    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
-
-    private List<TrainingCurriculum> topicList;
+//    @ManyToMany(targetEntity = Batch.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+//
+//    private List<Batch> batchesList;
+//
+//    @ManyToMany(targetEntity = TrainingCurriculum.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "topic_id", referencedColumnName = "topic_id")
+//
+//    private List<TrainingCurriculum> topicList;
 
 
 
