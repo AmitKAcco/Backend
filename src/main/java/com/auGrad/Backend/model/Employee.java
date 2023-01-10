@@ -99,7 +99,7 @@ import java.util.List;
 @Getter
 @Setter
 @SequenceGenerator(name="seq1", initialValue=8000,allocationSize=1)
-@Table(name="employee")
+@Table(name="employee", uniqueConstraints = @UniqueConstraint(columnNames = {"mob_no","email"}))
 public class Employee {
     //PK
     @Id
@@ -126,10 +126,10 @@ public class Employee {
     @Column(name="date_of_joining")
     private Date dateOfJoining;
 
-    @Column(name="mob_no" ,unique=true)
+    @Column(name="mob_no")
     private Long mobileNumber;
 
-    @Column(name="email" ,unique=true)
+    @Column(name="email")
     private String email;
 
     @Column(name="date_of_birth")
