@@ -2,6 +2,7 @@ package com.auGrad.Backend.services;
 
 import com.auGrad.Backend.model.Batch;
 import com.auGrad.Backend.model.Employee;
+import com.auGrad.Backend.repository.ApprovalRepo;
 import com.auGrad.Backend.repository.BatchRepo;
 import com.auGrad.Backend.repository.EmployeeRepo;
 import com.auGrad.Backend.repository.FeedbackRepo;
@@ -26,23 +27,38 @@ public class EmployeeServiceImplementation implements EmployeeService {
     private Batch batchAdded;
 
     @Override
-    public Employee createEmployee(Employee employee){
-        Employee employeeAdded = employeeRepo.save(employee);
-        Optional<Batch> obj3 = batchRepo.findByBatchName(employee.getBatchName());
-//
+    public String createEmployee(Employee employee){
+
+        System.out.println("mobbbss");
+        System.out.println(employee.getMobileNumber());
+        System.out.println("emaillss");
+        System.out.println(employee.getEmail());
+        Optional<Employee> objMob = this.employeeRepo.findByMobileNumber(employee.getMobileNumber());
+        if(objMob.isPresent())
+        {
+            return("Mobile already exists");
+        }
+        Optional<Employee> objEmail = this.employeeRepo.findByEmail(employee.getEmail());
+        if(objEmail.isPresent())
+        {
+            return("Email already exists");
+        }
+
 //        if(obj3.isPresent())
 //        {
 //            return (true);
 //        }
+
+
+        Employee employeeAdded = employeeRepo.save(employee);
+        Optional<Batch> obj3 = batchRepo.findByBatchName(employee.getBatchName());
         if(obj3.isPresent()){
             Batch b = obj3.get();
             employeeAdded.setBatchId(b.getBatchId());
             // interviewAdded.setBatchId(e.getBatchN());
         }
         employeeRepo.save(employeeAdded);
-
-
-        return employeeAdded;
+        return ("Graduate Added");
     }
     @Override
     public List<Employee> getEmployees(){

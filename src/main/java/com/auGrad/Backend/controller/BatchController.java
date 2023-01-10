@@ -40,10 +40,10 @@ private ResponseEntity<String> saveBatch(@RequestBody Batch batch){
         return ResponseEntity.ok().body(this.batchService.getBatches());
     }
 
-    @GetMapping("/checkIfBatchAlreadyExists/{batchName}")
-    private ResponseEntity<Boolean> checkIfBatchAlreadyExists(@PathVariable String batchName){
-        return ResponseEntity.ok().body(this.batchService.checkIfBatchAlreadyExists(batchName));
-    }
+//    @GetMapping("/checkIfBatchAlreadyExists/{batchName}")
+//    private ResponseEntity<Boolean> checkIfBatchAlreadyExists(@PathVariable String batchName){
+//        return ResponseEntity.ok().body(this.batchService.checkIfBatchAlreadyExists(batchName));
+//    }
 
 
 }

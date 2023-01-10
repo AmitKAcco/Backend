@@ -37,13 +37,13 @@ public class BatchServiceImplementation implements BatchService {
 
         if(obj.isPresent())
         {
-            return "batch already exists";
+            return("Batch already exists");
         }
 
         this.batchrepo.save(batch);
 
         //return batchAdded;
-        return "Batch Created";
+        return ("Batch created");
 
     }
     @Override

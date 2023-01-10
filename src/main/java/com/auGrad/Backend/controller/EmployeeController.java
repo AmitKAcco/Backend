@@ -15,7 +15,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping("/addEmployee")
-    private ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
+    private ResponseEntity<String> saveEmployee(@RequestBody Employee employee){
         try {
             return ResponseEntity.ok().body(this.employeeService.createEmployee(employee));
         }
