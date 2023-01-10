@@ -29,8 +29,11 @@ public class EmployeeServiceImplementation implements EmployeeService {
     public Employee createEmployee(Employee employee){
         Employee employeeAdded = employeeRepo.save(employee);
         Optional<Batch> obj3 = batchRepo.findByBatchName(employee.getBatchName());
-
-
+//
+//        if(obj3.isPresent())
+//        {
+//            return (true);
+//        }
         if(obj3.isPresent()){
             Batch b = obj3.get();
             employeeAdded.setBatchId(b.getBatchId());

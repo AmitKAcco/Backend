@@ -2,6 +2,7 @@ package com.auGrad.Backend.controller;
 
 import com.auGrad.Backend.exception.NoObjectFoundException;
 import com.auGrad.Backend.model.Batch;
+import com.auGrad.Backend.model.StatusCode;
 import com.auGrad.Backend.services.BatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class BatchController {
 //        }
 //    }
 @PostMapping("/addBatch")
-private ResponseEntity<Boolean> saveBatch(@RequestBody Batch batch){
+private ResponseEntity<String> saveBatch(@RequestBody Batch batch){
     try {
 
         return ResponseEntity.ok().body(this.batchService.createBatch(batch));
