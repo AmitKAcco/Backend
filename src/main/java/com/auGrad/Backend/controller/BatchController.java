@@ -5,10 +5,7 @@ import com.auGrad.Backend.model.Batch;
 import com.auGrad.Backend.services.BatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,5 +38,11 @@ private ResponseEntity<Boolean> saveBatch(@RequestBody Batch batch){
     private ResponseEntity<List<Batch>> getAllEmployees(){
         return ResponseEntity.ok().body(this.batchService.getBatches());
     }
+
+    @GetMapping("/checkIfBatchAlreadyExists/{batchName}")
+    private ResponseEntity<Boolean> checkIfBatchAlreadyExists(@PathVariable String batchName){
+        return ResponseEntity.ok().body(this.batchService.checkIfBatchAlreadyExists(batchName));
+    }
+
 
 }

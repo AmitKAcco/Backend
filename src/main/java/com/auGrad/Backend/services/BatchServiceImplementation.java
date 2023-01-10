@@ -13,8 +13,14 @@ import java.util.Optional;
 @Service
 @Transactional
 public class BatchServiceImplementation implements BatchService {
-    @Autowired
-    private BatchRepo batchrepo;
+ 
+
+//     private BatchRepo batchRepo;
+//     public Batch createBatch(Batch batch){
+//        Batch batchAdded =  this.batchRepo.save(batch);
+//        return batchAdded;
+      @Autowired
+      private BatchRepo batchrepo;
     public Boolean createBatch(Batch batch){
         Optional<Batch> obj = this.batchrepo.findByBatchName(batch.getBatchName());
 
@@ -30,12 +36,19 @@ public class BatchServiceImplementation implements BatchService {
        //return batchAdded;
         return (false);
 
+
     }
 
     @Override
     public  List<Batch> getBatches(){
 
-        return this.batchrepo.findAll();
+        return this.batchRepo.findAll();
     }
+    @Override
+    public boolean checkIfBatchAlreadyExists(String batchName){
+        Optional<Batch> findBatch = this.batchRepo.findByBatchName(batchName);
+        return findBatch.isPresent();
+    }
+
 
 }
